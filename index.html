@@ -96,17 +96,39 @@
     .head p { margin: 0; }
     @media (max-width: 900px) { section { padding: 64px 0; } .head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; } }
 
-    /* Expertise */
-    .expertise { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--navy); }
-    .expertise div { padding: 28px 28px 8px 0; }
-    .expertise div + div { padding-left: 28px; border-left: 1px solid var(--line); }
-    .expertise .n { font: 600 14px "Source Serif 4", serif; color: var(--accent); }
-    .expertise h3 { font-size: 19px; font-weight: 600; margin: 8px 0 10px; }
-    .expertise p { margin: 0; font-size: 16px; }
+    /* Services */
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--navy); }
+    .services div { padding: 30px 28px 30px 0; border-bottom: 1px solid var(--line); }
+    .services div:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
+    .services div:nth-last-child(-n+3) { border-bottom: 0; }
+    .n { font: 600 14px "Source Serif 4", serif; color: var(--accent); }
+    .services h3 { font-size: 19px; font-weight: 600; margin: 8px 0 10px; }
+    .services p { margin: 0; font-size: 16px; }
     @media (max-width: 900px) {
-      .expertise { grid-template-columns: 1fr; }
-      .expertise div, .expertise div + div { padding: 24px 0; border-left: 0; }
-      .expertise div + div { border-top: 1px solid var(--line); }
+      .services { grid-template-columns: 1fr; }
+      .services div, .services div:not(:nth-child(3n+1)) { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .services div:last-child { border-bottom: 0; }
+    }
+
+    /* Secteurs */
+    .sectors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; border-top: 2px solid var(--navy); }
+    .sectors li { padding: 22px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+    .sectors strong { color: var(--ink); font-weight: 600; font-size: 17px; }
+    .sectors span { font-size: 15px; }
+    .sectors em { font-style: normal; font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 4px; }
+    @media (max-width: 900px) { .sectors { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .sectors { grid-template-columns: 1fr; } }
+
+    /* Méthode */
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 2px solid var(--navy); }
+    .steps li { padding: 26px 22px 0 0; }
+    .steps li + li { padding-left: 22px; border-left: 1px solid var(--line); }
+    .steps h3 { font-size: 18px; font-weight: 600; margin: 8px 0 8px; }
+    .steps p { margin: 0; font-size: 15px; }
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: 1fr; }
+      .steps li, .steps li + li { padding: 20px 0; border-left: 0; }
+      .steps li + li { border-top: 1px solid var(--line); }
     }
 
     /* Réalisations */
@@ -171,7 +193,8 @@
     <div class="wrap">
       <a class="mark" href="#"><b>MD</b><span>Mohamed Solomani Doumbia</span></a>
       <nav aria-label="Navigation principale">
-        <a href="#expertise">Expertise</a>
+        <a href="#services">Services</a>
+        <a href="#secteurs">Secteurs</a>
         <a href="#realisations">Réalisations</a>
         <a href="#parcours">Parcours</a>
         <a href="#contact">Contact</a>
@@ -187,12 +210,12 @@
           <h1>Mohamed Solomani Doumbia</h1>
           <p class="title">Développeur d'applications de gestion — Master I MIAGE</p>
           <p class="summary">
-            Je conçois et développe des logiciels de gestion pour les entreprises&nbsp;:
-            caisse, stocks, ventes, crédit client. De l'analyse du besoin à la mise en production,
-            avec une attention particulière à la fiabilité des données et à la conformité.
+            J'accompagne entreprises, institutions, commerçants et porteurs de projets dans leur
+            transformation numérique&nbsp;: logiciels de gestion, sites web, applications et tableaux de bord,
+            de l'analyse du besoin jusqu'à la mise en service.
           </p>
           <div class="actions">
-            <a class="btn primary" href="#realisations">Voir mes réalisations</a>
+            <a class="btn primary" href="#contact">Discuter de votre projet</a>
             <a class="btn" href="assets/CV_Mohamed_Solomani_Doumbia.pdf" download>
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11"/></svg>
               Télécharger mon CV
@@ -209,35 +232,76 @@
       </div>
     </div>
 
-    <section id="expertise" class="alt">
+    <section id="services" class="alt">
       <div class="wrap">
         <div class="head">
           <div>
-            <p class="label">Expertise</p>
-            <h2>Relier le métier et la technique</h2>
+            <p class="label">Services</p>
+            <h2>Ce que je peux faire pour vous</h2>
           </div>
           <p>
-            Ma formation en MIAGE m'a appris à comprendre le fonctionnement d'une entreprise avant d'écrire
-            la moindre ligne de code. Mes projets m'ont appris à livrer des outils réellement utilisés.
+            Commerçant, PME, institution, association ou porteur de projet&nbsp;: je pars de votre activité
+            et de vos contraintes pour vous proposer l'outil qui vous fera réellement gagner du temps.
           </p>
         </div>
-        <div class="expertise">
+        <div class="services">
           <div>
             <span class="n">01</span>
-            <h3>Applications de gestion</h3>
-            <p>Caisse, stocks, ventes, crédit client et facturation, en web et en mobile, utilisables même hors connexion.</p>
+            <h3>Logiciels de gestion sur mesure</h3>
+            <p>Caisse, stocks, ventes, achats, crédit client, facturation, suivi du personnel&nbsp;: un outil adapté à votre organisation, utilisable même sans connexion.</p>
           </div>
           <div>
             <span class="n">02</span>
-            <h3>Données et sécurité</h3>
-            <p>Bases de données structurées, contrôle d'accès par rôle, isolation des données entre clients, tests automatisés.</p>
+            <h3>Sites web et boutiques en ligne</h3>
+            <p>Site vitrine pour présenter votre activité, boutique en ligne avec prise de commande, formulaires de contact ou de réservation.</p>
           </div>
           <div>
             <span class="n">03</span>
-            <h3>Outils de l'entreprise</h3>
-            <p>Excel, Word et PowerPoint à un niveau avancé, notions de Sage et Odoo, conception d'interfaces sur Figma.</p>
+            <h3>Applications web et mobiles</h3>
+            <p>Applications installables sur téléphone et ordinateur, pour vos équipes sur le terrain comme pour vos clients.</p>
+          </div>
+          <div>
+            <span class="n">04</span>
+            <h3>Tableaux de bord et automatisation</h3>
+            <p>Rapports et indicateurs clairs, fichiers Excel automatisés, passage de vos tableurs à une vraie application fiable.</p>
+          </div>
+          <div>
+            <span class="n">05</span>
+            <h3>Conseil et accompagnement</h3>
+            <p>Analyse de vos besoins, choix des bons outils (logiciel sur mesure, Sage, Odoo…), mise en place et formation de vos équipes.</p>
+          </div>
+          <div>
+            <span class="n">06</span>
+            <h3>Design et supports visuels</h3>
+            <p>Maquettes d'interfaces sur Figma, supports de communication (flyers, affiches, infographies) sur Canva.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="secteurs">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">Secteurs</p>
+            <h2>Des domaines d'intervention variés</h2>
+          </div>
+          <p>
+            Toute organisation a besoin de gérer ses données, ses ventes ou ses équipes.
+            Voici les secteurs dans lesquels je peux intervenir, dont plusieurs que je connais de l'intérieur.
+          </p>
+        </div>
+        <ul class="sectors">
+          <li><strong>Commerce et distribution</strong><span>Boutiques, grossistes, multi-magasins&nbsp;: caisse, stocks, crédit client.</span><em>Expérience directe — ABC STUDY, Kafora</em></li>
+          <li><strong>Banque et finance</strong><span>Outils internes, suivi d'activité, tableaux de bord, rigueur des données.</span><em>Expérience directe — Bank of Africa</em></li>
+          <li><strong>Assurance et protection sociale</strong><span>Gestion de dossiers d'adhérents, archives, production de documents.</span><em>Expérience directe — Canam (AMO)</em></li>
+          <li><strong>Santé</strong><span>Suivi de patients, rendez-vous, gestion de pharmacie ou de centre de santé.</span><em>Expérience directe — CIRSAC</em></li>
+          <li><strong>Éducation et formation</strong><span>Inscriptions, notes, paiements de scolarité, sites d'établissements.</span></li>
+          <li><strong>Administration et institutions</strong><span>Dématérialisation de procédures, archivage, suivi de demandes.</span></li>
+          <li><strong>ONG et associations</strong><span>Suivi de projets et de bénéficiaires, gestion des membres et des cotisations.</span></li>
+          <li><strong>BTP, agriculture et énergie</strong><span>Suivi de chantiers, d'équipements, de stocks de matériel et d'intrants.</span></li>
+          <li><strong>Restauration et services</strong><span>Commandes, caisse, réservations, fidélisation de la clientèle.</span></li>
+        </ul>
       </div>
     </section>
 
@@ -296,7 +360,26 @@
       </div>
     </section>
 
-    <section id="parcours" class="alt">
+    <section id="methode" class="alt">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">Méthode</p>
+            <h2>Comment je travaille avec vous</h2>
+          </div>
+          <p>Une démarche simple et transparente, pour que vous sachiez à chaque étape où en est votre projet.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="n">01</span><h3>Écoute</h3><p>Nous échangeons sur votre activité, vos difficultés et vos objectifs.</p></li>
+          <li><span class="n">02</span><h3>Proposition</h3><p>Je vous présente une solution, une maquette et un calendrier clairs.</p></li>
+          <li><span class="n">03</span><h3>Réalisation</h3><p>Je développe par étapes et vous validez chaque partie au fur et à mesure.</p></li>
+          <li><span class="n">04</span><h3>Mise en service</h3><p>J'installe l'outil et je forme les personnes qui vont l'utiliser.</p></li>
+          <li><span class="n">05</span><h3>Suivi</h3><p>Je reste disponible pour la maintenance, les corrections et les évolutions.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="parcours">
       <div class="wrap">
         <div class="head">
           <div>

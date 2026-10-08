@@ -9,3 +9,8 @@ Site personnel statique (HTML/CSS/JS, sans dépendance), publié avec GitHub Pag
 
 Pour ajouter une capture de projet : déposer l'image dans `assets/` puis remplacer « Capture à venir »
 dans la carte du projet par `<img src="assets/nom.png" alt="…" />` (voir les commentaires dans `index.html`).
+
+## CV
+
+Le PDF `assets/CV_Mohamed_Solomani_Doumbia.pdf` est généré à partir de `cv/cv.html` (police Carlito incluse dans `cv/fonts/`, QR code dans `cv/qr.svg`).
+Pour le modifier : éditer `cv/cv.html`, l'ouvrir dans Chrome, Imprimer → Enregistrer au format PDF, A4, marges « Aucune », « Graphiques d'arrière-plan » coché, puis vérifier qu'il tient sur une page.

@@ -243,15 +243,19 @@
     .card .top .pill { border-color: currentColor; height: 30px; min-width: 0; font-size: 12px; }
     /* Emplacement de la capture d'écran */
     .card .shot { margin: 32px 0; aspect-ratio: 16 / 10; border: 1.5px solid currentColor; display: grid; place-items: center; font: 400 13px var(--mono); }
-    .card .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .card .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .card .shot:has(img) { border-width: 1px; overflow: hidden; aspect-ratio: auto; display: block; }
+    .card .shot:has(img) img { height: auto; }
     .card h3 { font-size: 30px; line-height: 1.1; font-weight: 600; margin-bottom: 14px; }
     .card p { margin: 0; font: 400 14px/1.75 var(--mono); }
     .card .stack { margin-top: 18px; font: 700 13px var(--mono); }
     .figma { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid currentColor; }
-    .figma a { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; padding: 12px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
+    .figma a { display: grid; grid-template-columns: 72px 1fr auto; gap: 0 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
     .figma strong { font-weight: 600; font-size: 17px; }
-    .figma span { grid-row: 2; font: 400 13px var(--mono); }
-    .figma i { grid-row: 1 / 3; align-self: center; font-style: normal; font-size: 20px; transition: transform .2s; }
+    .figma img { grid-row: 1 / 3; width: 72px; height: 45px; object-fit: cover; object-position: top; border: 1px solid rgba(28,42,78,.25); }
+    .figma strong { grid-column: 2; }
+    .figma span { grid-row: 2; grid-column: 2; font: 400 13px var(--mono); }
+    .figma i { grid-row: 1 / 3; grid-column: 3; align-self: center; font-style: normal; font-size: 20px; transition: transform .2s; }
     .figma a:hover i { transform: translate(3px, -3px); }
     .figma a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
     .card .more { margin-top: auto; padding-top: 26px; font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; text-decoration: none; }
@@ -491,30 +495,27 @@
           </article>
           <article class="card">
             <div class="top"><span>Stock et point de vente</span><span class="pill">En production</span></div>
-            <!-- Capture : remplacer le texte par <img src="assets/culturecase-gs.png" alt="Capture de CultureCase GS" /> -->
-            <div class="shot">Capture à venir</div>
+            <div class="shot"><img src="assets/culturecase-gs.webp" alt="Écran d'accueil de CultureCase GS" width="1200" height="610" loading="lazy" style="object-position:center" /></div>
             <h3>CultureCase GS</h3>
             <p>L'outil quotidien d'ABC STUDY pour sa marque de coques CultureCase&nbsp;: tableau de bord, mouvements de stock, ventes, validation des commandes du site, export CSV, fonctionnement hors ligne.</p>
             <span class="stack">React · Vite · Firebase · GitHub Actions</span>
           </article>
           <article class="card">
             <div class="top"><span>E-commerce</span><span class="pill">En cours</span></div>
-            <!-- Capture : remplacer le texte par <img src="assets/boutique.png" alt="Capture de la boutique CultureCase" /> -->
-            <div class="shot">Capture à venir</div>
+            <div class="shot"><img src="assets/boutique-culturecase.webp" alt="Page d'accueil de la boutique en ligne CultureCase" width="1200" height="545" loading="lazy" /></div>
             <h3>Boutique CultureCase</h3>
             <p>La boutique en ligne des coques CultureCase&nbsp;: catalogue et parcours de commande. Les commandes sont transmises directement à CultureCase GS pour validation.</p>
             <span class="stack">JavaScript · Firebase</span>
           </article>
           <article class="card">
             <div class="top"><span>Design UI/UX</span><span class="pill">Formation</span></div>
-            <!-- Capture : remplacer le texte par <img src="assets/planifie-ton-voyage.png" alt="Maquette de PlanifieTonVoyage" /> -->
-            <div class="shot">Capture à venir</div>
+            <div class="shot"><img src="assets/planifie-ton-voyage.webp" alt="Maquette Figma de PlanifieTonVoyage" width="1200" height="664" loading="lazy" /></div>
             <h3>Maquettes Figma</h3>
             <p>Trois projets de conception d'interface réalisés pendant les formations de l'Orange Digital Center&nbsp;: parcours utilisateur, maquettes des écrans et prototypes interactifs.</p>
             <ul class="figma">
-              <li><a href="https://www.figma.com/proto/h32MOlyl6agplPxDfmU4z9/Untitled?page-id=69%3A602&amp;node-id=84-501&amp;starting-point-node-id=69%3A603" target="_blank" rel="noopener"><strong>PlanifieTonVoyage</strong><span>Site de voyage · prototype</span><i>↗</i></a></li>
-              <li><a href="https://www.figma.com/design/gyA7aaxe8XQEx5EmIEneTL/Page-Orange-Mali?node-id=0-1" target="_blank" rel="noopener"><strong>Page Orange Mali</strong><span>Page web · maquette</span><i>↗</i></a></li>
-              <li><a href="https://www.figma.com/proto/pM8OPBiKQVEV72gBosYkgj/Recette-Cuisine?node-id=80-198&amp;page-id=4%3A5&amp;starting-point-node-id=4%3A6&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener"><strong>Recette Cuisine</strong><span>Application · prototype, en binôme</span><i>↗</i></a></li>
+              <li><a href="https://www.figma.com/proto/h32MOlyl6agplPxDfmU4z9/Untitled?page-id=69%3A602&amp;node-id=84-501&amp;starting-point-node-id=69%3A603" target="_blank" rel="noopener"><img src="assets/planifie-ton-voyage.webp" alt="" width="72" height="45" loading="lazy" /><strong>PlanifieTonVoyage</strong><span>Site de voyage · prototype</span><i>↗</i></a></li>
+              <li><a href="https://www.figma.com/design/gyA7aaxe8XQEx5EmIEneTL/Page-Orange-Mali?node-id=0-1" target="_blank" rel="noopener"><img src="assets/orange-mali.webp" alt="" width="72" height="45" loading="lazy" /><strong>Page Orange Mali</strong><span>Page web · maquette</span><i>↗</i></a></li>
+              <li><a href="https://www.figma.com/proto/pM8OPBiKQVEV72gBosYkgj/Recette-Cuisine?node-id=80-198&amp;page-id=4%3A5&amp;starting-point-node-id=4%3A6&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener"><img src="assets/recette-cuisine.webp" alt="" width="72" height="45" loading="lazy" /><strong>Recette Cuisine</strong><span>Application · prototype, en binôme</span><i>↗</i></a></li>
             </ul>
           </article>
         </div>

@@ -231,11 +231,12 @@
     .work { background: var(--char); color: #fff; }
     .work .wrap { padding: 104px 0; }
     .work .sec-head p { color: #b6b8be; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
     .card { background: var(--indigo); color: #fff; padding: 36px 34px 34px; display: flex; flex-direction: column; min-height: 560px; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
     .card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.35); }
     .card:nth-child(2) { background: #f4f4f6; color: var(--ink); }
     .card:nth-child(3) { background: #fff; color: var(--ink); }
+    .card:nth-child(4) { background: var(--mist); color: var(--ink); }
     .card .top { display: flex; justify-content: space-between; align-items: center; font: 400 13px var(--mono); text-transform: uppercase; letter-spacing: .04em; }
     .card .top .pill { border-color: currentColor; height: 30px; min-width: 0; font-size: 12px; }
     /* Emplacement de la capture d'écran */
@@ -246,7 +247,7 @@
     .card .stack { margin-top: 18px; font: 700 13px var(--mono); }
     .card .more { margin-top: auto; padding-top: 26px; font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; text-decoration: none; }
     .card .more:hover { text-decoration: underline; }
-    @media (max-width: 1060px) { .cards { grid-template-columns: 1fr; } .card { min-height: 0; } }
+    @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .card { min-height: 0; } }
 
     /* ── Méthode ─────────────────────────────────────── */
     .method .wrap { padding: 104px 0; }
@@ -466,7 +467,7 @@
       <div class="wrap">
         <div class="reveal sec-head">
           <h2 class="big">Réalisations</h2>
-          <p>Trois applications conçues et développées seul, chacune née d'un besoin réel.</p>
+          <p>Trois applications conçues et développées seul, chacune née d'un besoin réel, et un projet de design d'interface.</p>
         </div>
         <div class="reveal cards">
           <article class="card">
@@ -493,6 +494,15 @@
             <h3>Boutique CultureCase</h3>
             <p>La boutique en ligne des coques CultureCase&nbsp;: catalogue et parcours de commande. Les commandes sont transmises directement à CultureCase GS pour validation.</p>
             <span class="stack">JavaScript · Firebase</span>
+          </article>
+          <article class="card">
+            <div class="top"><span>Design UI/UX</span><span class="pill">Formation</span></div>
+            <!-- Capture : remplacer le texte par <img src="assets/planifie-ton-voyage.png" alt="Maquette de PlanifieTonVoyage" /> -->
+            <div class="shot">Capture à venir</div>
+            <h3>PlanifieTonVoyage</h3>
+            <p>Refonte de la maquette d'un site de planification de voyages, réalisée pendant la formation UI/UX de l'Orange Digital Center&nbsp;: parcours utilisateur, maquettes des écrans et prototype interactif.</p>
+            <span class="stack">Figma · Prototypage</span>
+            <a class="more" href="https://www.figma.com/proto/h32MOlyl6agplPxDfmU4z9/Untitled?page-id=69%3A602&amp;node-id=84-501&amp;starting-point-node-id=69%3A603" target="_blank" rel="noopener">Voir le prototype Figma ↗</a>
           </article>
         </div>
       </div>

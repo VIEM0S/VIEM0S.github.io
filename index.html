@@ -245,6 +245,13 @@
     .card h3 { font-size: 30px; line-height: 1.1; font-weight: 600; margin-bottom: 14px; }
     .card p { margin: 0; font: 400 14px/1.75 var(--mono); }
     .card .stack { margin-top: 18px; font: 700 13px var(--mono); }
+    .figma { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid currentColor; }
+    .figma a { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; padding: 12px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
+    .figma strong { font-weight: 600; font-size: 17px; }
+    .figma span { grid-row: 2; font: 400 13px var(--mono); }
+    .figma i { grid-row: 1 / 3; align-self: center; font-style: normal; font-size: 20px; transition: transform .2s; }
+    .figma a:hover i { transform: translate(3px, -3px); }
+    .figma a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
     .card .more { margin-top: auto; padding-top: 26px; font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; text-decoration: none; }
     .card .more:hover { text-decoration: underline; }
     @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .card { min-height: 0; } }
@@ -467,7 +474,7 @@
       <div class="wrap">
         <div class="reveal sec-head">
           <h2 class="big">Réalisations</h2>
-          <p>Trois applications conçues et développées seul, chacune née d'un besoin réel, et un projet de design d'interface.</p>
+          <p>Trois applications conçues et développées seul, chacune née d'un besoin réel, et des maquettes d'interface.</p>
         </div>
         <div class="reveal cards">
           <article class="card">
@@ -475,7 +482,7 @@
             <!-- Capture : remplacer le texte par <img src="assets/kafora.png" alt="Capture de Kafora" /> -->
             <div class="shot">Capture à venir</div>
             <h3>Kafora</h3>
-            <p>Plateforme de gestion pour les commerces d'Afrique de l'Ouest&nbsp;: caisse hors ligne, stocks, crédit client, multi-magasins, cinq niveaux de rôles, factures conformes au SYSCOHADA. Données de chaque entreprise isolées et testées automatiquement.</p>
+            <p>Plateforme SaaS de gestion pour les PME commerçantes d'Afrique de l'Ouest&nbsp;: caisse hors ligne, reçus thermiques, facturation numérotée selon le SYSCOHADA, import de produits en masse, limites de crédit client, gestion des employés, journal d'audit et formules d'abonnement. Audit de sécurité réalisé et tests automatisés.</p>
             <span class="stack">Next.js · TypeScript · Supabase · Playwright</span>
             <a class="more" href="https://kafora-erp.netlify.app">Accéder à Kafora ↗</a>
           </article>
@@ -499,10 +506,13 @@
             <div class="top"><span>Design UI/UX</span><span class="pill">Formation</span></div>
             <!-- Capture : remplacer le texte par <img src="assets/planifie-ton-voyage.png" alt="Maquette de PlanifieTonVoyage" /> -->
             <div class="shot">Capture à venir</div>
-            <h3>PlanifieTonVoyage</h3>
-            <p>Refonte de la maquette d'un site de planification de voyages, réalisée pendant la formation UI/UX de l'Orange Digital Center&nbsp;: parcours utilisateur, maquettes des écrans et prototype interactif.</p>
-            <span class="stack">Figma · Prototypage</span>
-            <a class="more" href="https://www.figma.com/proto/h32MOlyl6agplPxDfmU4z9/Untitled?page-id=69%3A602&amp;node-id=84-501&amp;starting-point-node-id=69%3A603" target="_blank" rel="noopener">Voir le prototype Figma ↗</a>
+            <h3>Maquettes Figma</h3>
+            <p>Trois projets de conception d'interface réalisés pendant les formations de l'Orange Digital Center&nbsp;: parcours utilisateur, maquettes des écrans et prototypes interactifs.</p>
+            <ul class="figma">
+              <li><a href="https://www.figma.com/proto/h32MOlyl6agplPxDfmU4z9/Untitled?page-id=69%3A602&amp;node-id=84-501&amp;starting-point-node-id=69%3A603" target="_blank" rel="noopener"><strong>PlanifieTonVoyage</strong><span>Site de voyage · prototype</span><i>↗</i></a></li>
+              <li><a href="https://www.figma.com/design/gyA7aaxe8XQEx5EmIEneTL/Page-Orange-Mali?node-id=0-1" target="_blank" rel="noopener"><strong>Page Orange Mali</strong><span>Page web · maquette</span><i>↗</i></a></li>
+              <li><a href="https://www.figma.com/proto/pM8OPBiKQVEV72gBosYkgj/Recette-Cuisine?node-id=80-198&amp;page-id=4%3A5&amp;starting-point-node-id=4%3A6&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener"><strong>Recette Cuisine</strong><span>Application · prototype, en binôme</span><i>↗</i></a></li>
+            </ul>
           </article>
         </div>
       </div>
@@ -536,15 +546,15 @@
         <div>
           <h3>Expérience</h3>
           <ol>
-            <li><div class="when">Août 2026 – Octobre 2026</div><div class="what">Stagiaire / <span>Bank of Africa, Bamako</span></div></li>
+            <li><div class="when">Août 2026 – Octobre 2026</div><div class="what">Stagiaire / <span>Bank of Africa, agence de Sotuba</span></div><p>Accueil et orientation de la clientèle, préparation des chèques et des opérations de remise, constitution et vérification des demandes clients (virements, chéquiers, réactivation de comptes), remise des cartes Visa, classement et archivage.</p></li>
             <li><div class="when">2026 – Aujourd'hui</div><div class="what">Gérant / <span>ABC STUDY, Bamako</span></div><p>Commerce général et prestations de services, maison de la marque CultureCase.</p></li>
-            <li><div class="when">Février 2025 – Mars 2025</div><div class="what">Formation d'instructeur / <span>CIRSAC</span></div></li>
+            <li><div class="when">Février 2025 – Mars 2025</div><div class="what">Formation d'inspecteur / <span>CIRSAC</span></div><p>Formation qualitative et quantitative dans le cadre de la prise en charge des femmes enceintes.</p></li>
             <li><div class="when">Janvier 2025</div><div class="what">Stagiaire / <span>Canam (ACI 2000)</span></div><p>Service archives, puis service informatique&nbsp;: production des cartes AMO.</p></li>
           </ol>
           <h3>Formation</h3>
           <ol>
             <li><div class="when">2024 – 2025</div><div class="what">Master I MIAGE / <span>INTECT SUP, Bamako</span></div></li>
-            <li><div class="when">Octobre – Décembre 2024</div><div class="what">Développement web, puis UI/UX / <span>Orange Digital Center</span></div></li>
+            <li><div class="when">Octobre – Décembre 2024</div><div class="what">Développement web, puis UI/UX / <span>Orange Digital Center</span></div><p>Formation intensive en conditions réelles, puis conception d'interfaces sur Figma (trois maquettes, voir Réalisations).</p></li>
             <li><div class="when">2018 – 2021</div><div class="what">Bachelier informatique de gestion / <span>CUPP-BALLAT, Bamako</span></div></li>
           </ol>
           <h3>Outils et langues</h3>

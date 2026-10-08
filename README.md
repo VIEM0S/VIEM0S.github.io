@@ -4,6 +4,7 @@ Site personnel statique (HTML/CSS/JS, sans dépendance), publié avec GitHub Pag
 
 - `index.html` : la page (styles et script intégrés)
 - `404.html` : page d'erreur
+- `projets/kafora.html` : étude de cas détaillée de Kafora
 - `assets/` : photo (JPEG + WebP), icônes, image d'aperçu pour les partages (`og-image.jpg`) et CV en PDF
 - `robots.txt`, `sitemap.xml` : référencement
 

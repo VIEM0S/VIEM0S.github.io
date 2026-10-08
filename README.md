@@ -8,7 +8,7 @@ Site personnel statique (HTML/CSS/JS, sans dépendance), publié avec GitHub Pag
 - `robots.txt`, `sitemap.xml` : référencement
 
 Pour ajouter une capture de projet : déposer l'image dans `assets/` puis remplacer « Capture à venir »
-dans la carte du projet par `<img src="assets/nom.webp" alt="…" loading="lazy" />` (seule la carte Kafora attend encore sa capture).
+dans la carte du projet par `<img src="assets/nom.webp" alt="…" loading="lazy" />`.
 
 ## CV
 

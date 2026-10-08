@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Mohamed Solomani Doumbia — Logiciels de gestion, sites web, applications et accompagnement numérique" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#1c2a4e" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -52,14 +52,16 @@
   <style>
     :root {
       color-scheme: light;
-      --black: #0a0a0a;
-      --char: #222222;
+      --navy: #1c2a4e;        /* bleu marine du CV */
+      --navy-deep: #15203d;
+      --navy-soft: #22335d;
       --white: #ffffff;
       --mist: #d5dae2;
       --ink: #111111;
       --grey: #5c5f66;
       --line: #e3e5e9;
-      --indigo: #5a5cf0;
+      --orange: #e0673c;      /* orange du CV : filets et détails */
+      --accent: #c4552b;      /* orange un peu plus foncé : boutons et petits textes (contraste) */
       --mono: "Space Mono", ui-monospace, monospace;
     }
 
@@ -75,21 +77,21 @@
     .big { font-size: clamp(54px, 8.4vw, 128px); line-height: .98; font-weight: 400; letter-spacing: -0.035em; }
     .pill {
       display: inline-grid; place-items: center; min-width: 52px; height: 36px; padding: 0 12px;
-      border: 1.5px solid var(--indigo); border-radius: 999px; font: 400 15px var(--mono);
+      border: 1.5px solid var(--orange); border-radius: 999px; font: 400 15px var(--mono);
     }
     .btn {
       display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 30px;
       font: 500 15px "Poppins", sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
       border: 1.5px solid currentColor; transition: background .15s, color .15s;
     }
-    .btn.solid { background: var(--indigo); border-color: var(--indigo); color: #fff; }
-    .btn.solid:hover { background: #4446d6; border-color: #4446d6; }
-    .btn.line:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.solid:hover { background: var(--navy); border-color: var(--navy); }
+    .btn.line:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
     /* Accessibilité */
-    .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--indigo); color: #fff; padding: 10px 16px; text-decoration: none; }
+    .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--accent); color: #fff; padding: 10px 16px; text-decoration: none; }
     .skip:focus { top: 12px; }
-    :focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     section { scroll-margin-top: 72px; }
 
     /* Apparition au défilement */
@@ -108,9 +110,9 @@
     .nav nav { display: flex; gap: 40px; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
     .nav nav a { text-decoration: none; }
     .nav nav a { position: relative; transition: color .2s; }
-    .nav nav a:hover, .nav nav a.active { color: var(--indigo); }
+    .nav nav a:hover, .nav nav a.active { color: var(--accent); }
     .nav .wrap { position: relative; }
-    .nav .progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--indigo); transform-origin: 0 50%; transform: scaleX(0); }
+    .nav .progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
     .burger { display: none; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; padding: 10px; margin-right: -10px; }
     .burger span { display: block; height: 2px; background: var(--ink); transition: transform .25s, opacity .25s; }
     .burger span + span { margin-top: 7px; }
@@ -122,10 +124,10 @@
       .nav nav { display: none; }
       .burger { display: block; }
       .mobile-menu {
-        display: flex; flex-direction: column; position: fixed; inset: 72px 0 0; z-index: 19; background: var(--black); color: #fff;
+        display: flex; flex-direction: column; position: fixed; inset: 72px 0 0; z-index: 19; background: var(--navy); color: #fff;
         padding: 32px 16px; gap: 4px; transform: translateY(-8px); opacity: 0; visibility: hidden; transition: opacity .25s, transform .25s, visibility .25s;
       }
-      .mobile-menu a { font-size: 34px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; padding: 6px 0; border-bottom: 1px solid #2c2c2c; display: flex; justify-content: space-between; align-items: baseline; }
+      .mobile-menu a { font-size: 34px; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.14); display: flex; justify-content: space-between; align-items: baseline; }
       .mobile-menu a small { font: 400 13px var(--mono); color: #8a8d94; }
       .mobile-menu .btn { margin-top: 28px; justify-content: center; align-items: center; border-bottom: 0; font-size: 15px; letter-spacing: .06em; }
       .menu-open .mobile-menu { opacity: 1; visibility: visible; transform: none; }
@@ -154,15 +156,15 @@
     @media (max-width: 640px) { .hero-text { padding: 40px 16px 56px; } }
 
     /* ── Services (fond noir, grille) ────────────────── */
-    .services { background: var(--black); color: #fff; }
+    .services { background: var(--navy); color: #fff; }
     .services .grid { display: grid; grid-template-columns: 1fr 1.7fr; }
-    .services .title-cell { padding: 96px 48px 96px max(32px, calc((100vw - 1280px) / 2)); border-right: 1px solid #2c2c2c; }
+    .services .title-cell { padding: 96px 48px 96px max(32px, calc((100vw - 1280px) / 2)); border-right: 1px solid rgba(255,255,255,.14); }
     .services .title-cell .inner { position: sticky; top: 120px; }
     .services .title-cell p { color: #b6b8be; margin: 32px 0 0; max-width: 22em; }
-    .service { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center; padding: 56px max(32px, calc((100vw - 1280px) / 2)) 56px 48px; border-bottom: 1px solid #2c2c2c; }
-    .service:nth-child(even) { background: #141414; }
+    .service { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center; padding: 56px max(32px, calc((100vw - 1280px) / 2)) 56px 48px; border-bottom: 1px solid rgba(255,255,255,.14); }
+    .service:nth-child(even) { background: var(--navy-deep); }
     .service { transition: background .3s; }
-    .service:hover { background: #1b1b2e; }
+    .service:hover { background: var(--navy-soft); }
     .service svg { width: 132px; height: 132px; justify-self: center; transition: transform .4s cubic-bezier(.2,.7,.2,1); }
     .service:hover svg { transform: scale(1.06) rotate(-3deg); }
     .service .row { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start; }
@@ -170,7 +172,7 @@
     .service p { margin: 12px 0 0; color: #c9cbd1; }
     @media (max-width: 960px) {
       .services .grid { grid-template-columns: 1fr; }
-      .services .title-cell { padding: 72px 32px 40px; border-right: 0; border-bottom: 1px solid #2c2c2c; }
+      .services .title-cell { padding: 72px 32px 40px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
       .service { grid-template-columns: 1fr; padding: 40px 32px; gap: 24px; }
       .service svg { justify-self: start; width: 88px; height: 88px; }
     }
@@ -193,12 +195,12 @@
     .about .text p { margin: 0; }
     @media (max-width: 860px) { .about::after { width: 22%; opacity: .6; } .about .text { grid-template-columns: 1fr; gap: 20px; } }
 
-    /* ── Chiffres (indigo) ───────────────────────────── */
-    .figures { background: var(--indigo); color: #fff; }
+    /* ── Chiffres (marine) ───────────────────────────── */
+    .figures { background: var(--navy); color: #fff; }
     .figures .wrap { display: grid; grid-template-columns: 1fr 2.2fr; gap: 48px; padding: 72px 0 80px; }
     .figures h2 { font-size: clamp(30px, 3vw, 44px); font-weight: 400; }
     .figures .cells { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px; }
-    .figures .cell { border-top: 12px solid #fff; border-bottom: 1px solid rgba(255,255,255,.7); padding: 30px 0 34px; }
+    .figures .cell { border-top: 12px solid var(--orange); border-bottom: 1px solid rgba(255,255,255,.7); padding: 30px 0 34px; }
     .figures strong { display: block; font-size: clamp(48px, 5.4vw, 76px); line-height: 1; font-weight: 600; letter-spacing: -0.03em; }
     .figures span { display: block; margin-top: 14px; }
     @media (max-width: 860px) { .figures .wrap { grid-template-columns: 1fr; } }
@@ -213,9 +215,9 @@
     .sectors li:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
     .sectors li { transition: background .25s; }
     .sectors h3 { font-size: 21px; font-weight: 500; margin-bottom: 8px; transition: color .25s; }
-    .sectors li:hover h3 { color: var(--indigo); }
+    .sectors li:hover h3 { color: var(--accent); }
     .sectors p { margin: 0; color: var(--grey); font-size: 15px; }
-    .sectors .xp { display: inline-block; margin-top: 14px; font: 400 12px var(--mono); color: var(--indigo); text-transform: uppercase; letter-spacing: .04em; }
+    .sectors .xp { display: inline-block; margin-top: 14px; font: 400 12px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
     @media (max-width: 960px) {
       .sec-head { grid-template-columns: 1fr; gap: 24px; }
       .sectors { grid-template-columns: 1fr 1fr; }
@@ -228,15 +230,15 @@
     }
 
     /* ── Réalisations (anthracite, cartes) ───────────── */
-    .work { background: var(--char); color: #fff; }
+    .work { background: #eef0f4; color: var(--ink); }
     .work .wrap { padding: 104px 0; }
-    .work .sec-head p { color: #b6b8be; }
+    .work .sec-head p { color: var(--grey); }
     .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .card { background: var(--indigo); color: #fff; padding: 36px 34px 34px; display: flex; flex-direction: column; min-height: 560px; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,.35); }
-    .card:nth-child(2) { background: #f4f4f6; color: var(--ink); }
-    .card:nth-child(3) { background: #fff; color: var(--ink); }
-    .card:nth-child(4) { background: var(--mist); color: var(--ink); }
+    .card { background: var(--navy); color: #fff; padding: 36px 34px 34px; display: flex; flex-direction: column; min-height: 560px; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(28,42,78,.22); }
+    .card:nth-child(2) { background: #fff; color: var(--ink); border-top: 6px solid var(--orange); }
+    .card:nth-child(3) { background: #fff; color: var(--ink); border-top: 6px solid var(--orange); }
+    .card:nth-child(4) { background: var(--mist); color: var(--ink); border-top: 6px solid var(--orange); }
     .card .top { display: flex; justify-content: space-between; align-items: center; font: 400 13px var(--mono); text-transform: uppercase; letter-spacing: .04em; }
     .card .top .pill { border-color: currentColor; height: 30px; min-width: 0; font-size: 12px; }
     /* Emplacement de la capture d'écran */
@@ -282,18 +284,18 @@
     .journey .what { font: 700 17px var(--mono); margin-top: 6px; }
     .journey .what span { font-weight: 400; }
     .journey li p { margin: 8px 0 0; font: 400 14px/1.75 var(--mono); color: var(--grey); }
-    .journey h3 { font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--indigo); margin: 0 0 24px; }
+    .journey h3 { font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 24px; }
     .langs { font: 400 14px/1.8 var(--mono); }
     @media (max-width: 960px) { .journey .wrap { grid-template-columns: 1fr; gap: 40px; } }
 
     /* ── Contact (noir + formulaire) ─────────────────── */
-    .contact { display: grid; grid-template-columns: 1fr 1fr; background: var(--black); }
+    .contact { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); }
     .contact .left { color: #fff; padding: 96px 48px 72px max(32px, calc((100vw - 1280px) / 2)); display: flex; flex-direction: column; }
     .contact .left p { margin: 36px 0 0; font-size: 19px; color: #d3d4d8; }
     .contact .coords { margin-top: auto; padding-top: 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-size: 18px; }
     .contact .coords a { text-decoration: none; display: block; }
     .contact .coords a:hover { text-decoration: underline; }
-    .contact .right { background: #fff; margin-top: 180px; border-top: 12px solid var(--indigo); padding: 64px max(32px, calc((100vw - 1280px) / 2)) 72px 72px; }
+    .contact .right { background: #fff; margin-top: 180px; border-top: 12px solid var(--orange); padding: 64px max(32px, calc((100vw - 1280px) / 2)) 72px 72px; }
     form { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 20px; }
     form .full { grid-column: 1 / -1; }
     label { display: block; font-size: 16px; margin-bottom: 8px; }
@@ -301,10 +303,10 @@
       width: 100%; font: 400 15px "Poppins", sans-serif; color: var(--ink); background: #fff;
       border: 1px solid #8a8d94; border-radius: 0; padding: 12px 14px;
     }
-    input:focus, select:focus, textarea:focus { outline: 2px solid var(--indigo); outline-offset: -1px; border-color: var(--indigo); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
     textarea { min-height: 130px; resize: vertical; }
-    form button { grid-column: 1 / -1; height: 54px; border: 0; background: var(--black); color: #fff; font: 500 15px "Poppins", sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
-    form button:hover { background: var(--indigo); }
+    form button { grid-column: 1 / -1; height: 54px; border: 0; background: var(--navy); color: #fff; font: 500 15px "Poppins", sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+    form button:hover { background: var(--accent); }
     .form-note { grid-column: 1 / -1; margin: -8px 0 0; font-size: 13px; color: var(--grey); }
     .form-note.ok { color: #1f7a4b; font-weight: 500; }
     @media (max-width: 960px) {
@@ -318,9 +320,10 @@
       form { grid-template-columns: 1fr; }
     }
 
-    /* ── Pied de page (indigo) ───────────────────────── */
-    footer { background: var(--indigo); color: #fff; display: grid; grid-template-columns: 1fr 2.4fr; }
+    /* ── Pied de page (marine foncé) ─────────────────── */
+    footer { background: var(--navy-deep); color: #fff; display: grid; grid-template-columns: 1fr 2.4fr; }
     footer .mark { padding: 64px 40px 56px max(32px, calc((100vw - 1280px) / 2)); border-right: 1px solid rgba(255,255,255,.55); font: 600 clamp(96px, 12vw, 190px)/0.85 "Poppins", sans-serif; letter-spacing: -0.05em; display: flex; align-items: flex-end; }
+    footer .mark span { color: var(--orange); }
     footer .links { padding: 64px max(32px, calc((100vw - 1280px) / 2)) 56px 48px; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 72px; align-content: end; font-size: 17px; }
     footer .links a { text-decoration: none; display: block; }
     footer .links a:hover { text-decoration: underline; }
@@ -396,27 +399,27 @@
         </div>
         <div>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="20" y="28" width="22" height="84" rx="11"/><rect x="55" y="70" width="22" height="42" rx="11"/><rect x="90" y="46" width="22" height="66" rx="11" fill="#5a5cf0" stroke="#5a5cf0"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="20" y="28" width="22" height="84" rx="11"/><rect x="55" y="70" width="22" height="42" rx="11"/><rect x="90" y="46" width="22" height="66" rx="11" fill="#e0673c" stroke="#e0673c"/></svg>
             <div class="row"><span class="pill">01</span><div><h3>Logiciels de gestion sur mesure</h3><p>Caisse, stocks, ventes, achats, crédit client, facturation, suivi du personnel&nbsp;: un outil adapté à votre organisation, utilisable même sans connexion.</p></div></div>
           </article>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="14" y="26" width="104" height="80" rx="6"/><path d="M14 44h104"/><circle cx="26" cy="35" r="3" fill="#fff"/><circle cx="37" cy="35" r="3" fill="#fff"/><rect x="28" y="58" width="44" height="34" fill="#5a5cf0" stroke="#5a5cf0"/><path d="M84 60h22M84 72h22M84 84h14"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="14" y="26" width="104" height="80" rx="6"/><path d="M14 44h104"/><circle cx="26" cy="35" r="3" fill="#fff"/><circle cx="37" cy="35" r="3" fill="#fff"/><rect x="28" y="58" width="44" height="34" fill="#e0673c" stroke="#e0673c"/><path d="M84 60h22M84 72h22M84 84h14"/></svg>
             <div class="row"><span class="pill">02</span><div><h3>Sites web et boutiques en ligne</h3><p>Site vitrine pour présenter votre activité, boutique en ligne avec prise de commande, formulaires de contact ou de réservation.</p></div></div>
           </article>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="40" y="14" width="52" height="104" rx="10"/><path d="M58 24h16"/><circle cx="66" cy="104" r="5" fill="#5a5cf0" stroke="#5a5cf0"/><path d="M52 44h28M52 56h28M52 68h18"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="40" y="14" width="52" height="104" rx="10"/><path d="M58 24h16"/><circle cx="66" cy="104" r="5" fill="#e0673c" stroke="#e0673c"/><path d="M52 44h28M52 56h28M52 68h18"/></svg>
             <div class="row"><span class="pill">03</span><div><h3>Applications web et mobiles</h3><p>Applications installables sur téléphone et ordinateur, pour vos équipes sur le terrain comme pour vos clients.</p></div></div>
           </article>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><circle cx="30" cy="30" r="12"/><circle cx="66" cy="30" r="12"/><circle cx="102" cy="30" r="12"/><circle cx="30" cy="66" r="12"/><circle cx="66" cy="66" r="12" fill="#5a5cf0" stroke="#5a5cf0"/><circle cx="102" cy="66" r="12"/><circle cx="30" cy="102" r="12"/><circle cx="66" cy="102" r="12"/><circle cx="102" cy="102" r="12"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><circle cx="30" cy="30" r="12"/><circle cx="66" cy="30" r="12"/><circle cx="102" cy="30" r="12"/><circle cx="30" cy="66" r="12"/><circle cx="66" cy="66" r="12" fill="#e0673c" stroke="#e0673c"/><circle cx="102" cy="66" r="12"/><circle cx="30" cy="102" r="12"/><circle cx="66" cy="102" r="12"/><circle cx="102" cy="102" r="12"/></svg>
             <div class="row"><span class="pill">04</span><div><h3>Tableaux de bord et automatisation</h3><p>Rapports et indicateurs clairs, fichiers Excel automatisés, passage de vos tableurs à une application fiable.</p></div></div>
           </article>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><circle cx="48" cy="66" r="32"/><circle cx="84" cy="66" r="32" fill="#5a5cf0" stroke="#5a5cf0" fill-opacity=".9"/><circle cx="48" cy="66" r="32"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><circle cx="48" cy="66" r="32"/><circle cx="84" cy="66" r="32" fill="#e0673c" stroke="#e0673c" fill-opacity=".9"/><circle cx="48" cy="66" r="32"/></svg>
             <div class="row"><span class="pill">05</span><div><h3>Conseil et accompagnement</h3><p>Analyse de vos besoins, choix des bons outils (logiciel sur mesure, Sage, Odoo…), mise en place et formation de vos équipes.</p></div></div>
           </article>
           <article class="service reveal">
-            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="18" y="18" width="62" height="62"/><circle cx="84" cy="84" r="30" fill="#5a5cf0" stroke="#5a5cf0"/><path d="M18 18l96 96"/></svg>
+            <svg viewBox="0 0 132 132" fill="none" stroke="#fff" stroke-width="2.5" aria-hidden="true"><rect x="18" y="18" width="62" height="62"/><circle cx="84" cy="84" r="30" fill="#e0673c" stroke="#e0673c"/><path d="M18 18l96 96"/></svg>
             <div class="row"><span class="pill">06</span><div><h3>Design et supports visuels</h3><p>Maquettes d'interfaces sur Figma, supports de communication (flyers, affiches, infographies) sur Canva.</p></div></div>
           </article>
         </div>
@@ -603,7 +606,7 @@
   </main>
 
   <footer>
-    <div class="mark">MSD.</div>
+    <div class="mark">MSD<span>.</span></div>
     <div class="links">
       <a href="mailto:dmohamedsolomani@gmail.com">E-mail</a>
       <a href="#services">Services</a>

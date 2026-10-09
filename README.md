@@ -14,5 +14,7 @@ dans la carte du projet par `<img src="assets/nom.webp" alt="…" loading="lazy"
 
 ## CV
 
+Deux versions : française (`cv/cv.html` → `assets/CV_Mohamed_Solomani_Doumbia.pdf`) et anglaise (`cv/cv-en.html` → `assets/CV_Mohamed_Solomani_Doumbia_EN.pdf`, utilisée par la version anglaise du site).
+
 Le PDF `assets/CV_Mohamed_Solomani_Doumbia.pdf` est généré à partir de `cv/cv.html` (police Carlito incluse dans `cv/fonts/`, QR code dans `cv/qr.svg`).
 Pour le modifier : éditer `cv/cv.html`, l'ouvrir dans Chrome, Imprimer → Enregistrer au format PDF, A4, marges « Aucune », « Graphiques d'arrière-plan » coché, puis vérifier qu'il tient sur une page.

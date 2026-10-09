@@ -360,7 +360,7 @@
     footer .links { padding: 64px max(32px, calc((100vw - 1280px) / 2)) 56px 48px; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 72px; align-content: end; font-size: 17px; }
     footer .links a { text-decoration: none; display: block; }
     footer .links a:hover { text-decoration: underline; }
-    footer .links small { grid-column: 1 / -1; margin-top: 32px; font: 400 13px var(--mono); opacity: .85; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer .links small { grid-column: 1 / -1; margin-top: 32px; font: 400 13px var(--mono); opacity: .85; display: flex; justify-content: flex-end; gap: 16px; flex-wrap: wrap; }
     footer .links small a { display: inline; text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 860px) {
       footer { grid-template-columns: 1fr; }
@@ -656,14 +656,13 @@
       <a href="tel:+22375992482">Téléphone</a>
       <a href="#methode">Méthode</a>
       <a href="projets/kafora.html">Étude Kafora</a>
-      <small><span>© <span id="year">2026</span> Mohamed Solomani Doumbia — Bamako, Mali</span><a href="#">Retour en haut ↑</a></small>
+      <small><a href="#">Retour en haut ↑</a></small>
     </div>
   </footer>
 
   <script>
     (function () {
       var root = document.documentElement;
-      document.getElementById("year").textContent = new Date().getFullYear();
 
       // Menu mobile
       var burger = document.querySelector(".burger");

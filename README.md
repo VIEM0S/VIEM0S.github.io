@@ -18,3 +18,8 @@ Deux versions : française (`cv/cv.html` → `assets/CV_Mohamed_Solomani_Doumbia
 
 Le PDF `assets/CV_Mohamed_Solomani_Doumbia.pdf` est généré à partir de `cv/cv.html` (police Carlito incluse dans `cv/fonts/`, QR code dans `cv/qr.svg`).
 Pour le modifier : éditer `cv/cv.html`, l'ouvrir dans Chrome, Imprimer → Enregistrer au format PDF, A4, marges « Aucune », « Graphiques d'arrière-plan » coché, puis vérifier qu'il tient sur une page.
+
+## Statistiques de visites
+
+GoatCounter (sans cookies) : tableau de bord sur https://dmohamedsolomani.goatcounter.com.
+Événements suivis : téléchargements du CV (`cv-download-fr` / `cv-download-en`), clics WhatsApp, e-mail, GitHub, Instagram, Kafora, Figma, et formulaire envoyé (`formulaire-envoye-fr` / `-en`).

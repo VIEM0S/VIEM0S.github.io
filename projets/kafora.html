@@ -113,6 +113,15 @@
     .sectors b { font-weight: 400; color: var(--grey); margin-right: 6px; }
     .sectors span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
 
+    /* Galerie de captures */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(28,42,78,.12); }
+    .gallery figcaption { margin-top: 12px; font: 400 13px var(--mono); color: var(--grey); }
+    .gallery figcaption b { color: var(--ink); font-weight: 700; }
+    @media (max-width: 760px) { .gallery { grid-template-columns: 1fr; gap: 22px; } }
+    .plans-note { margin: 28px 0 0; font: 400 14px/1.8 var(--mono); color: var(--grey); }
+
     /* Choix techniques */
     .tech { background: #eef0f4; }
     .choices { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
@@ -241,10 +250,16 @@
         <div class="modules">
           <div><h3><span>01</span>Vente</h3><ul><li>Point de vente (caisse)</li><li>Ouverture et clôture de caisse par caissier</li><li>Ventes, retours et reçus thermiques</li><li>Devis et factures</li></ul></div>
           <div><h3><span>02</span>Stock</h3><ul><li>Produits et import en masse</li><li>Inventaire et comptage physique</li><li>Transferts entre magasins</li><li>Fournisseurs et bons de commande</li></ul></div>
-          <div><h3><span>03</span>Finance</h3><ul><li>Clients et crédits</li><li>Limites et remboursements</li><li>Dépenses avec validation</li><li>Marge réelle par vente</li></ul></div>
-          <div><h3><span>04</span>Pilotage</h3><ul><li>Tableau de bord et analyses</li><li>Multi-magasins</li><li>Utilisateurs et 5 niveaux de rôles</li><li>Journal d'audit et notifications</li></ul></div>
+          <div><h3><span>03</span>Finance</h3><ul><li>Clients et crédits</li><li>Limites et remboursements</li><li>Dépenses avec validation</li><li>Trésorerie par mode de paiement et opérateur Mobile Money</li><li>Marge réelle par vente</li></ul></div>
+          <div><h3><span>04</span>Pilotage</h3><ul><li>Tableau de bord et analyses</li><li>Multi-magasins</li><li>Utilisateurs et 5 niveaux de rôles</li><li>Double authentification</li><li>Journal d'audit et notifications</li></ul></div>
         </div>
-        <p class="sectors"><b>Pensé pour&nbsp;:</b><span>Boutiques et mode</span><span>Électronique et téléphonie</span><span>Épiceries</span><span>Quincailleries</span></p>
+        <p class="sectors"><b>Pensé pour&nbsp;:</b><span>Électronique et téléphonie</span><span>Épiceries</span><span>Quincailleries</span></p>
+        <div class="gallery">
+          <figure><img src="../assets/kafora-dashboard.webp" alt="Capture de Kafora : tableau de bord" width="1400" height="585" loading="lazy" /><figcaption><b>Tableau de bord</b> — chiffre d'affaires, valeur du stock, crédits en cours</figcaption></figure>
+          <figure><img src="../assets/kafora-pos.webp" alt="Capture de Kafora : point de vente" width="1400" height="585" loading="lazy" /><figcaption><b>Point de vente</b> — recherche ou scan du code-barres, panier</figcaption></figure>
+          <figure><img src="../assets/kafora-inventaire.webp" alt="Capture de Kafora : inventaire" width="1400" height="585" loading="lazy" /><figcaption><b>Inventaire</b> — stock par produit et par magasin</figcaption></figure>
+          <figure><img src="../assets/kafora-credits.webp" alt="Capture de Kafora : crédits clients" width="1400" height="585" loading="lazy" /><figcaption><b>Crédits clients</b> — encours, échéances, remboursements</figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -263,7 +278,8 @@
           <li><span class="pill">02</span><h3>Une caisse qui vend hors ligne</h3><p>Sans connexion, les ventes sont mises en file d'attente sur l'appareil, chacune avec un identifiant unique pour éviter les doublons. <strong>Au retour du réseau, elles sont synchronisées et revérifiées par le serveur</strong> (prix, coût, stock réel). Le caissier n'est jamais bloqué, et rien n'est accepté sans contrôle.</p></li>
           <li><span class="pill">03</span><h3>La logique sensible côté serveur</h3><p>Caisse, crédit, ventes, création et suppression d'utilisateurs passent par des routes serveur et des fonctions SQL, pas par le navigateur. <strong>Les opérations à risque demandent une double validation</strong>&nbsp;: une limite de crédit, une dépense importante ou la suppression d'un employé doivent être approuvées par une autre personne, jamais par celle qui les demande.</p></li>
           <li><span class="pill">04</span><h3>Des factures conformes au SYSCOHADA</h3><p>Chaque facture reçoit un numéro du type <strong>FAC-2026-000001</strong>, généré par une séquence PostgreSQL propre à chaque entreprise et à chaque année. La numérotation est continue et sans trou, comme l'exige le référentiel comptable OHADA.</p></li>
-          <li><span class="pill">05</span><h3>Des offres adaptées à chaque taille</h3><p>Les limites de chaque forfait (utilisateurs, magasins, produits) sont définies à un seul endroit du code et appliquées partout. <strong>Une formule Solo à 8&nbsp;000 FCFA</strong> a été ajoutée pour les vendeurs seuls, freinés par le prix des autres offres.</p></li>
+          <li><span class="pill">05</span><h3>Des comptes protégés par double authentification</h3><p>Les comptes peuvent être protégés par un code à usage unique (TOTP, comme Google Authenticator). <strong>La vérification est imposée par la base de données elle-même</strong>&nbsp;: une session qui n'a pas validé son code n'accède à aucune donnée de l'entreprise, même en contournant l'interface.</p></li>
+          <li><span class="pill">06</span><h3>Des offres adaptées à chaque taille</h3><p>Les limites de chaque forfait (utilisateurs, magasins) sont définies à un seul endroit du code et <strong>appliquées par la base</strong>, pas seulement par l'interface. Les abonnements se paient par Mobile Money&nbsp;: le client déclare son paiement, le SMS de réception Wave ou Orange Money sert de preuve, et l'éditeur valide.</p></li>
         </ol>
       </div>
     </section>
@@ -279,9 +295,9 @@
           <p>Un logiciel qui gère l'argent d'un commerce doit être fiable. Le code est couvert par des tests automatisés, des tests de sécurité de la base et des parcours complets simulés dans un navigateur.</p>
         </div>
         <div class="cells">
-          <div class="cell"><strong>~200</strong><span>tests automatisés (unitaires, base de données et parcours)</span></div>
-          <div class="cell"><strong>12</strong><span>parcours complets testés&nbsp;: vente, caisse, crédit, retour, inventaire…</span></div>
-          <div class="cell"><strong>87</strong><span>migrations de base de données versionnées</span></div>
+          <div class="cell"><strong>400+</strong><span>tests automatisés (unitaires, base de données et parcours)</span></div>
+          <div class="cell"><strong>19</strong><span>parcours complets testés&nbsp;: vente, caisse, crédit, retour, inventaire…</span></div>
+          <div class="cell"><strong>99</strong><span>migrations de base de données versionnées</span></div>
           <div class="cell"><strong>5</strong><span>failles de sécurité trouvées lors d'un audit, toutes corrigées</span></div>
         </div>
       </div>
@@ -298,11 +314,12 @@
           <p>Kafora est vendu par abonnement mensuel, avec 14 jours d'essai gratuit, sans carte bancaire.</p>
         </div>
         <div class="plans">
-          <div><h3>Solo</h3><p class="price">8 000 <small>FCFA / mois</small></p><ul><li>1 utilisateur</li><li>1 magasin</li><li>300 produits</li></ul></div>
-          <div><h3>Starter</h3><p class="price">25 000 <small>FCFA / mois</small></p><ul><li>3 utilisateurs</li><li>1 magasin</li><li>1 000 produits</li></ul></div>
-          <div><h3>Business</h3><p class="price">75 000 <small>FCFA / mois</small></p><ul><li>10 utilisateurs</li><li>3 magasins</li><li>5 000 produits</li></ul></div>
-          <div><h3>Enterprise</h3><p class="price">200 000 <small>FCFA / mois</small></p><ul><li>Utilisateurs illimités</li><li>Magasins illimités</li><li>Produits illimités</li></ul></div>
+          <div><h3>Solo</h3><p class="price">6 000 <small>FCFA / mois</small></p><ul><li>1 utilisateur</li><li>1 magasin</li></ul></div>
+          <div><h3>Starter</h3><p class="price">15 000 <small>FCFA / mois</small></p><ul><li>3 utilisateurs</li><li>1 magasin</li></ul></div>
+          <div><h3>Business</h3><p class="price">35 000 <small>FCFA / mois</small></p><ul><li>10 utilisateurs</li><li>3 magasins</li><li>Analyses et multi-magasins</li></ul></div>
+          <div><h3>Entreprise</h3><p class="price">80 000 <small>FCFA / mois</small></p><ul><li>25 utilisateurs</li><li>10 magasins</li><li>Au-delà&nbsp;: sur devis</li></ul></div>
         </div>
+        <p class="plans-note">Paiement annuel&nbsp;: 2 mois offerts · Utilisateurs et magasins supplémentaires en complément · Paiement par Mobile Money, Orange Money, Wave, virement ou espèces.</p>
       </div>
     </section>
 
@@ -317,7 +334,7 @@
           <p>Ce qui n'est pas encore fait, connu et prévu.</p>
         </div>
         <ul>
-          <li><strong>Paiement mobile vérifié</strong><span>Aujourd'hui, un paiement Mobile Money est déclaré par le caissier. L'étape suivante est une confirmation automatique via un agrégateur (PayDunya, CinetPay…).</span></li>
+          <li><strong>Paiement mobile vérifié automatiquement</strong><span>Aujourd'hui, les paiements Mobile Money sont déclarés (par le caissier en caisse, par le client pour son abonnement) puis contrôlés. L'étape suivante est une confirmation automatique via un agrégateur (PayDunya, CinetPay…).</span></li>
           <li><strong>Comptabilité générale</strong><span>Kafora couvre la gestion commerciale (ventes, stock, crédit). Un module comptable SYSCOHADA complet (grand livre, bilan) viendra ensuite.</span></li>
           <li><strong>Sauvegardes automatiques</strong><span>Mise en place de sauvegardes planifiées de la base de données.</span></li>
         </ul>

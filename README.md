@@ -6,6 +6,7 @@ Site personnel statique (HTML/CSS/JS, sans dépendance), publié avec GitHub Pag
 - `404.html` : page d'erreur
 - `projets/kafora.html`, `projets/culturecase.html` : études de cas détaillées
 - `en/` : version anglaise (`en/index.html`, `en/projects/kafora.html`) — à mettre à jour en même temps que la version française
+- `abc-study/` : vitrine de l'entreprise ABC STUDY (page autonome, logo `logo.svg`, image de partage `og-abc-study.jpg`). Le numéro de compte bancaire n'y figure volontairement pas.
 - `assets/` : photo (JPEG + WebP), icônes, image d'aperçu pour les partages (`og-image.jpg`) et CV en PDF
 - `robots.txt`, `sitemap.xml` : référencement
 
@@ -22,4 +23,4 @@ Pour le modifier : éditer `cv/cv.html`, l'ouvrir dans Chrome, Imprimer → Enre
 ## Statistiques de visites
 
 GoatCounter (sans cookies) : tableau de bord sur https://dmohamedsolomani.goatcounter.com.
-Événements suivis : téléchargements du CV (`cv-download-fr` / `cv-download-en`), clics WhatsApp, e-mail, GitHub, Instagram, Kafora, Figma, et formulaire envoyé (`formulaire-envoye-fr` / `-en`).
+Événements suivis : téléchargements du CV (`cv-download-fr` / `cv-download-en`), clics WhatsApp, e-mail, GitHub, Instagram, Kafora, Figma, et formulaire envoyé (`formulaire-envoye-fr` / `-en`). Sur la vitrine ABC STUDY : `abc-whatsapp`, `abc-whatsapp-hero`, `abc-whatsapp-flottant`, `abc-telephone`, `abc-email`, `abc-vers-portfolio`.

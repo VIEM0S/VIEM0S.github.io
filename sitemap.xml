@@ -24,4 +24,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://viem0s.github.io/projets/kafora.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://viem0s.github.io/en/projects/kafora.html" />
   </url>
+  <url>
+    <loc>https://viem0s.github.io/projets/culturecase.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viem0s.github.io/projets/culturecase.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://viem0s.github.io/en/projects/culturecase.html" />
+  </url>
+  <url>
+    <loc>https://viem0s.github.io/en/projects/culturecase.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viem0s.github.io/projets/culturecase.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://viem0s.github.io/en/projects/culturecase.html" />
+  </url>
 </urlset>

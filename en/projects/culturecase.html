@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CultureCase — Case study · Mohamed Solomani Doumbia</title>
+  <meta name="description" content="Case study of CultureCase GS, the inventory and sales tool Mohamed Solomani Doumbia built for his Malian-design phone case brand, and its online store." />
+  <meta name="author" content="Mohamed Solomani Doumbia" />
+  <link rel="canonical" href="https://viem0s.github.io/en/projects/culturecase.html" />
+  <link rel="alternate" hreflang="fr" href="https://viem0s.github.io/projets/culturecase.html" />
+  <link rel="alternate" hreflang="en" href="https://viem0s.github.io/en/projects/culturecase.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://viem0s.github.io/en/projects/culturecase.html" />
+  <meta property="og:title" content="CultureCase — Case study" />
+  <meta property="og:description" content="From a notebook to software: how I built the management tool for my own brand, CultureCase." />
+  <meta property="og:image" content="https://viem0s.github.io/assets/cc-dashboard.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1c2a4e" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" />
+
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #1c2a4e; --navy-deep: #15203d; --navy-soft: #22335d;
+      --orange: #e0673c; --accent: #c4552b;
+      --mist: #d5dae2; --ink: #111111; --grey: #5c5f66; --line: #e3e5e9; --white: #fff;
+      --mono: "Space Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--white); color: var(--ink); font: 400 17px/1.65 "Poppins", system-ui, sans-serif; }
+    h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.02em; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { width: min(1180px, 100% - 64px); margin-inline: auto; }
+    @media (max-width: 640px) { .wrap { width: calc(100% - 32px); } }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--accent); color: #fff; padding: 10px 16px; text-decoration: none; }
+    .skip:focus { top: 12px; }
+    .label { font: 400 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0 0 18px; }
+    .big { font-size: clamp(40px, 6vw, 84px); line-height: 1; font-weight: 400; letter-spacing: -0.035em; }
+    .pill { display: inline-grid; place-items: center; min-width: 52px; height: 36px; padding: 0 12px; border: 1.5px solid var(--orange); border-radius: 999px; font: 400 15px var(--mono); }
+    .btn { display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 30px; font: 500 15px "Poppins", sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: 1.5px solid currentColor; transition: background .15s, color .15s; }
+    .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.solid:hover { background: var(--navy); border-color: var(--navy); }
+    .btn.line:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+    section { padding: 96px 0; }
+    @media (max-width: 860px) { section { padding: 64px 0; } }
+    .head { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: end; margin-bottom: 56px; }
+    .head p { margin: 0; color: var(--grey); }
+    @media (max-width: 860px) { .head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; } }
+
+    /* Navigation */
+    .lang { margin-left: 24px; font: 400 13px var(--mono); letter-spacing: .04em; text-decoration: none; border: 1px solid var(--line); padding: 6px 10px; display: inline-flex; gap: 6px; text-transform: none; }
+    .lang b { font-weight: 700; color: var(--accent); }
+    .lang:hover { border-color: var(--accent); }
+    .nav nav { margin-left: auto; }
+
+    .nav { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--line); }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+    .logo { font: 600 26px "Poppins", sans-serif; text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--orange); }
+    .nav nav { display: flex; gap: 32px; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+    .nav nav a { text-decoration: none; }
+    .nav nav a:hover { color: var(--accent); }
+    @media (max-width: 560px) { .nav nav { gap: 18px; font-size: 13px; } .nav nav .opt { display: none; } }
+
+    /* En-tête de l'étude */
+    .intro { padding: 72px 0 0; }
+    .crumb { font: 400 13px var(--mono); color: var(--grey); text-decoration: none; }
+    .crumb:hover { color: var(--accent); }
+    .intro h1 { font-size: clamp(64px, 11vw, 160px); line-height: .9; font-weight: 600; letter-spacing: -0.05em; margin: 28px 0 24px; }
+    .intro .lead { font-size: clamp(21px, 2.2vw, 30px); line-height: 1.35; max-width: 26em; margin: 0 0 48px; }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+    .facts div { padding: 22px 24px 26px 0; }
+    .facts div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+    .facts dt { font: 400 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--grey); margin-bottom: 6px; }
+    .facts dd { margin: 0; font-weight: 500; }
+    .facts a { color: var(--accent); }
+    @media (max-width: 860px) { .facts { grid-template-columns: 1fr 1fr; } .facts div:nth-child(3) { padding-left: 0; border-left: 0; } .facts div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+    .cover { margin-top: 56px; background: var(--navy); padding: clamp(16px, 4vw, 56px); }
+    .cover img { border: 1px solid rgba(255,255,255,.2); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+
+    /* Problème */
+    .problem { background: var(--navy); color: #fff; padding-top: 0; }
+    .problem .head p { color: #c3c9d6; }
+    .problem .label { color: var(--orange); }
+    .constraints { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
+    .constraints li { padding: 32px 32px 8px 0; }
+    .constraints li + li { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.14); }
+    .constraints h3 { font-size: 24px; font-weight: 400; margin: 22px 0 10px; }
+    .constraints p { margin: 0; color: #c3c9d6; }
+    @media (max-width: 860px) { .constraints { grid-template-columns: 1fr; } .constraints li, .constraints li + li { padding: 26px 0; border-left: 0; } .constraints li + li { border-top: 1px solid rgba(255,255,255,.14); } }
+
+    /* Modules */
+    .modules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--ink); }
+    .modules > div { padding: 28px 24px 8px 0; }
+    .modules > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+    .modules h3 { font-size: 21px; margin-bottom: 14px; }
+    .modules h3 span { color: var(--accent); font: 400 13px var(--mono); display: block; margin-bottom: 8px; }
+    .modules ul { margin: 0; padding: 0; list-style: none; }
+    .modules li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    @media (max-width: 960px) { .modules { grid-template-columns: 1fr 1fr; } .modules > div:nth-child(3) { padding-left: 0; border-left: 0; } }
+    @media (max-width: 560px) { .modules { grid-template-columns: 1fr; } .modules > div, .modules > div + div { padding: 24px 0; border-left: 0; } }
+    .sectors { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font: 400 14px var(--mono); }
+    .sectors b { font-weight: 400; color: var(--grey); margin-right: 6px; }
+    .sectors span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+
+    /* Galerie de captures */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(28,42,78,.12); }
+    .gallery figcaption { margin-top: 12px; font: 400 13px var(--mono); color: var(--grey); }
+    .gallery figcaption b { color: var(--ink); font-weight: 700; }
+    @media (max-width: 760px) { .gallery { grid-template-columns: 1fr; gap: 22px; } }
+    .plans-note { margin: 28px 0 0; font: 400 14px/1.8 var(--mono); color: var(--grey); }
+
+    /* Étude CultureCase */
+    .steps4 { grid-template-columns: repeat(4, 1fr) !important; }
+    @media (max-width: 960px) { .steps4 { grid-template-columns: 1fr !important; } }
+    .quote { margin: 64px 0 0; padding: 36px 0 0; border-top: 1px solid rgba(255,255,255,.2); display: grid; grid-template-columns: 90px 1fr; gap: 24px; }
+    .quote span { font: 600 96px/0.8 "Poppins", sans-serif; color: var(--orange); }
+    .quote blockquote { margin: 0; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.35; font-weight: 300; }
+    .quote cite { display: block; margin-top: 16px; font: 400 13px var(--mono); font-style: normal; color: #c3c9d6; text-transform: uppercase; letter-spacing: .06em; }
+    @media (max-width: 700px) { .quote { grid-template-columns: 1fr; gap: 8px; } .quote span { font-size: 64px; } }
+    .store { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+    .store img { width: 100%; border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(28,42,78,.12); }
+    .store ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+    .store li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .store .status-note { margin: 22px 0 0; font: 400 13px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+    @media (max-width: 900px) { .store { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* Choix techniques */
+    .tech { background: #eef0f4; }
+    .choices { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+    .choices li { display: grid; grid-template-columns: 90px 1fr 1.3fr; gap: 32px; padding: 34px 0; border-bottom: 1px solid #d9dce3; }
+    .choices h3 { font-size: 24px; line-height: 1.2; }
+    .choices p { margin: 0; color: var(--grey); }
+    .choices p strong { color: var(--ink); font-weight: 500; }
+    @media (max-width: 860px) { .choices li { grid-template-columns: 1fr; gap: 12px; } }
+
+    /* Qualité */
+    .quality { background: var(--navy); color: #fff; }
+    .quality .head p { color: #c3c9d6; }
+    .quality .label { color: var(--orange); }
+    .cells { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .cell { border-top: 12px solid var(--orange); border-bottom: 1px solid rgba(255,255,255,.6); padding: 28px 0 30px; }
+    .cell strong { display: block; font-size: clamp(44px, 5vw, 68px); line-height: 1; font-weight: 600; letter-spacing: -0.03em; }
+    .cell span { display: block; margin-top: 14px; color: #dfe3ea; }
+    @media (max-width: 960px) { .cells { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .cells { grid-template-columns: 1fr; } }
+
+    /* Offres */
+    .plans { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+    .plans > div { padding: 28px 24px 28px 0; }
+    .plans > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+    .plans h3 { font-size: 22px; }
+    .plans .price { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; margin: 12px 0 2px; }
+    .plans .price small { font: 400 13px var(--mono); color: var(--grey); letter-spacing: 0; }
+    .plans ul { list-style: none; margin: 16px 0 0; padding: 0; font: 400 14px/1.9 var(--mono); color: var(--grey); }
+    @media (max-width: 960px) { .plans { grid-template-columns: 1fr 1fr; } .plans > div:nth-child(3) { padding-left: 0; border-left: 0; } .plans > div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+    @media (max-width: 480px) { .plans { grid-template-columns: 1fr; } .plans > div, .plans > div + div { padding: 24px 0; border-left: 0; border-top: 1px solid var(--line); } }
+
+    /* Suite */
+    .next { background: #eef0f4; }
+    .next ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); max-width: 860px; }
+    .next li { padding: 22px 0; border-bottom: 1px solid #d9dce3; display: grid; grid-template-columns: 1fr 2fr; gap: 24px; }
+    .next li strong { font-weight: 500; }
+    .next li span { color: var(--grey); }
+    @media (max-width: 700px) { .next li { grid-template-columns: 1fr; gap: 6px; } }
+
+    /* Appel à l'action */
+    .cta { background: var(--navy); color: #fff; }
+    .cta .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: end; }
+    .cta p { color: #c3c9d6; margin: 24px 0 0; max-width: 30em; }
+    .cta .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: flex-end; }
+    .cta .btn.line { color: #fff; }
+    .cta .btn.line:hover { background: #fff; color: var(--navy); border-color: #fff; }
+    @media (max-width: 860px) { .cta .wrap { grid-template-columns: 1fr; } .cta .actions { justify-content: flex-start; } }
+    /* ── Bouton WhatsApp flottant ────────────────────── */
+    .wa-float {
+      position: fixed; right: 20px; bottom: 20px; z-index: 30; display: inline-flex; align-items: center; gap: 10px;
+      height: 56px; padding: 0 20px 0 16px; border-radius: 999px; background: #25d366; color: #0b3d20; text-decoration: none;
+      font-weight: 600; font-size: 15px; box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float svg { width: 26px; height: 26px; }
+    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.3); }
+    @media (max-width: 640px) { .wa-float { right: 14px; bottom: 14px; width: 56px; padding: 0; justify-content: center; } .wa-float span { display: none; } }
+    .menu-open .wa-float { display: none; }
+    footer { background: var(--navy-deep); color: #c3c9d6; font: 400 13px var(--mono); }
+    footer .wrap { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; padding: 24px 0; }
+    footer a { color: #fff; }
+  </style>
+  <script data-goatcounter="https://dmohamedsolomani.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="../" aria-label="Back to Mohamed Solomani Doumbia's portfolio">MSD<span>.</span></a>
+      <nav aria-label="Navigation">
+        <a href="../#realisations">Work</a>
+        <a href="../#services" class="opt">Services</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+      <a class="lang" href="../../projets/culturecase.html" hreflang="fr" lang="fr" aria-label="Version française">FR / <b>EN</b></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="intro">
+      <div class="wrap">
+        <a class="crumb" href="../#realisations">← All work</a>
+        <h1 style="font-size: clamp(46px, 11vw, 160px);">CultureCase</h1>
+        <p class="lead">The management tool I built for my own brand of phone cases with Malian cultural designs: inventory, sales, deliveries and customers in one place. Then the online store that plugs into it.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Founder, sole designer and developer</dd></div>
+          <div><dt>Status</dt><dd>In daily use since May 2026</dd></div>
+          <div><dt>Stack</dt><dd>React, Vite, Firebase</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/VIEM0S/Culturecase-site">Store on GitHub ↗</a></dd></div>
+        </dl>
+      </div>
+      <div class="cover">
+        <div class="wrap" style="width: min(1180px, 100%);">
+          <img src="../../assets/cc-dashboard.webp" alt="CultureCase GS dashboard: total stock, out of stock, low stock, daily and monthly revenue, stock alerts" width="1400" height="709" />
+        </div>
+      </div>
+    </div>
+
+    <!-- L'histoire -->
+    <section class="problem" style="padding-top: 96px;">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">Starting point</p>
+            <h2 class="big">The story</h2>
+          </div>
+          <p>CultureCase is the iPhone case brand of ABC STUDY, the company I run. With hundreds of model × design combinations, knowing what was left in stock quickly became the real problem. The tool grew step by step.</p>
+        </div>
+        <ol class="constraints steps4">
+          <li><span class="pill">01</span><h3>Checking on the spot</h3><p>For every request, someone had to physically check whether the case was available.</p></li>
+          <li><span class="pill">02</span><h3>Phone notes</h3><p>Sales were jotted down as they came, with no overview and no reliable history.</p></li>
+          <li><span class="pill">03</span><h3>A shared spreadsheet</h3><p>With Excel, my partner and I finally saw the same stock in real time. A real step up.</p></li>
+          <li><span class="pill">04</span><h3>Custom software</h3><p>At first I just wanted a catalogue. It became CultureCase GS, the tool that runs the whole business.</p></li>
+        </ol>
+        <div class="quote">
+          <span aria-hidden="true">“</span>
+          <div>
+            <blockquote>It was a real relief: I record orders anytime, anywhere, and I know everything.</blockquote>
+            <cite>Mohamed Solomani Doumbia, founder of CultureCase</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- En chiffres -->
+    <section class="quality">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">In the field</p>
+            <h2 class="big">By the numbers</h2>
+          </div>
+          <p>CultureCase GS is used every day to run the business. These figures come from the app itself.</p>
+        </div>
+        <div class="cells">
+          <div class="cell"><strong>207</strong><span>sales recorded since May 2026</span></div>
+          <div class="cell"><strong>184</strong><span>customers tracked and automatically segmented</span></div>
+          <div class="cell"><strong>0</strong><span>data lost since May 2026, thanks to backups</span></div>
+          <div class="cell"><strong>91</strong><span>automated tests on inventory and sales logic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- La solution -->
+    <section id="solution">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">What CultureCase GS does</p>
+            <h2 class="big">The solution</h2>
+          </div>
+          <p>A back office that installs on phones and computers, built around the real operations of a small business: sell, deliver, follow up, restock.</p>
+        </div>
+        <div class="modules">
+          <div><h3><span>01</span>Inventory</h3><ul><li>Products by iPhone model and design</li><li>Stock in and out movements</li><li>Out-of-stock and low-stock alerts</li><li>Data import and export</li></ul></div>
+          <div><h3><span>02</span>Sales</h3><ul><li>Multi-product sales</li><li>Deliveries to confirm: delivered or not received</li><li>Credit sales, discounts, exchanges</li><li>Receipts and WhatsApp messages to customers</li></ul></div>
+          <div><h3><span>03</span>Customers</h3><ul><li>Purchase history per customer</li><li>Automatic segments: VIP, loyal, regular, new, inactive</li><li>Search by name, phone or neighbourhood</li></ul></div>
+          <div><h3><span>04</span>Management</h3><ul><li>Dashboard and 30-day revenue</li><li>Best sellers and reports</li><li>Store orders, reviews and blog</li><li>Error log</li></ul></div>
+        </div>
+        <div class="gallery">
+          <figure><img src="../../assets/cc-ventes.webp" alt="CultureCase GS screenshot: sales and deliveries awaiting confirmation" width="1400" height="718" loading="lazy" /><figcaption><b>Sales</b> — deliveries to confirm, filters, filtered revenue</figcaption></figure>
+          <figure><img src="../../assets/cc-clients.webp" alt="CultureCase GS screenshot: customer history and segments" width="1400" height="668" loading="lazy" /><figcaption><b>Customer history</b> — 184 customers, automatic segments</figcaption></figure>
+        </div>
+        <p class="sectors" style="margin-top: 20px;"><b>Customer personal data is blurred in the screenshots.</b></p>
+      </div>
+    </section>
+
+    <!-- Choix techniques -->
+    <section class="tech">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">How it's built</p>
+            <h2 class="big">Technical choices</h2>
+          </div>
+          <p>Before May 2026, I lost data. Every choice below comes from that: a management tool that loses sales is useless.</p>
+        </div>
+        <ol class="choices">
+          <li><span class="pill">01</span><h3>Never lose data again</h3><p>Data lives in Firestore, synced in real time across devices. <strong>Every change is also copied locally</strong>, and a <strong>full backup goes to Google Sheets every week</strong> (the last eight are kept). No data has been lost since.</p></li>
+          <li><span class="pill">02</span><h3>Selling without a connection</h3><p>CultureCase GS installs like an app (PWA) and <strong>keeps working offline</strong>. Operations sync when the network returns, and an indicator shows the sync status.</p></li>
+          <li><span class="pill">03</span><h3>A single source of truth</h3><p>The online store reads the catalogue, prices and stock directly from the back office. It can only create <strong>pending</strong> orders and reviews, which I approve. Designs are recognised even after being renamed.</p></li>
+          <li><span class="pill">04</span><h3>Security and privacy</h3><p><strong>Firestore security rules</strong> separate the admin, a read-only viewer mode and the public. Contact details from orders that were never processed are <strong>deleted automatically</strong> after a while.</p></li>
+          <li><span class="pill">05</span><h3>Built to last</h3><p>91 automated tests cover inventory, sales, orders and backup logic. <strong>Every update is tested and deployed automatically</strong> (GitHub Actions), and errors hit by the app are logged so they can be fixed.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- La boutique -->
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">The natural next step</p>
+            <h2 class="big">The online store</h2>
+          </div>
+          <p>Once the back office was in place, the catalogue could finally be shown to customers, with stock that is always accurate.</p>
+        </div>
+        <div class="store">
+          <img src="../../assets/boutique-culturecase.webp" alt="CultureCase online store home page" width="1200" height="545" loading="lazy" />
+          <div>
+            <ul>
+              <li>Catalogue of designs inspired by bogolan, N'Ko and Malian monuments</li>
+              <li>Real-time prices and availability per iPhone model</li>
+              <li>Cart, checkout and order tracking</li>
+              <li>Customer reviews and blog, managed from the back office</li>
+              <li>Framework-free JavaScript, fast and lightweight</li>
+            </ul>
+            <p class="status-note">Ready, public launch coming soon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suite -->
+    <section class="next">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <p class="label">What's next</p>
+            <h2 class="big">Next steps</h2>
+          </div>
+          <p>A tool that grows with the business.</p>
+        </div>
+        <ul>
+          <li><strong>Open the store to the public</strong><span>Launch the online store so the first orders arrive straight in CultureCase GS.</span></li>
+          <li><strong>Keep improving the tool</strong><span>Add new features as the business's real needs evolve.</span></li>
+          <li><strong>What I took from it</strong><span>The foundations of Kafora: CultureCase GS taught me what a retailer really needs, and I now apply it at a larger scale.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <p class="label" style="color: var(--orange);">Running a business?</p>
+          <h2 class="big">Let's talk about your needs</h2>
+          <p>Inventory, sales, deliveries, customers: I can build the tool that fits your business. Get in touch.</p>
+        </div>
+        <div class="actions">
+          <a class="btn solid" href="../#contact">Contact me</a>
+          <a class="btn line" href="kafora.html">See Kafora too →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/22375992482?text=Hello%20Mohamed%2C%20I%27m%20contacting%20you%20from%20your%20portfolio." target="_blank" rel="noopener" aria-label="Message me on WhatsApp" data-goatcounter-click="whatsapp-en"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span>WhatsApp</span></a>
+
+  <footer>
+    <div class="wrap">
+      <a href="../">Back to portfolio</a>
+    </div>
+  </footer>
+</body>
+</html>

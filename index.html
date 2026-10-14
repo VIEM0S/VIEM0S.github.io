@@ -367,6 +367,103 @@
       footer .mark { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.55); padding: 48px 32px 40px; }
       footer .links { padding: 40px 32px 48px; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
     }
+
+    /* ── Téléphone : version compacte et lisible ─────── */
+    @media (max-width: 860px) {
+      .mobile-menu { overflow-y: auto; }
+      .cards { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      section { scroll-margin-top: 64px; }
+      .nav .wrap { height: 64px; }
+      .logo { font-size: 23px; }
+      .mobile-menu { inset: 64px 0 0; padding: 20px 16px 32px; }
+      .mobile-menu a { font-size: 28px; padding: 8px 0; }
+      .mobile-menu .btn { margin-top: 20px; }
+      @media (max-height: 700px) { .mobile-menu a { font-size: 24px; padding: 5px 0; } .mobile-menu .btn { height: 48px; margin-top: 14px; } }
+      .big { font-size: 46px; }
+
+      /* Accueil : le nom apparaît dès le premier écran */
+      .hero-photo { height: 44vh; min-height: 260px; max-height: 360px; }
+      .hero-text { padding: 28px 16px 48px; }
+      .hero .tag { font-size: 12.5px; margin-bottom: 18px; }
+      .hero h1 { font-size: clamp(44px, 13.5vw, 58px); }
+      .hero .lead { font-size: 20px; margin: 24px 0 20px; }
+      .hero .offer { margin-bottom: 32px; font-size: 12px; }
+      .hero .actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .hero .actions .btn { justify-content: center; height: 52px; padding: 0 20px; }
+
+      /* Services : icône à gauche, texte à droite */
+      .services .title-cell { padding-top: 56px; padding-bottom: 32px; }
+      .services .title-cell p { margin-top: 20px; }
+      .service { grid-template-columns: 52px minmax(0, 1fr); gap: 18px; align-items: start; padding-top: 28px; padding-bottom: 30px; }
+      .service svg { width: 52px; height: 52px; margin-top: 4px; }
+      .service .row { gap: 10px; }
+      .service .pill { justify-self: start; height: 26px; min-width: 0; padding: 0 10px; font-size: 12px; }
+      .service h3 { font-size: 22px; }
+      .service p { margin-top: 8px; font-size: 15px; }
+
+      /* À propos */
+      .about::after { display: none; }
+      .about .wrap { padding: 56px 0 64px; }
+      .about .role { font-size: 18px; margin-bottom: 20px; color: var(--grey); }
+      .about .statement { font-size: 30px; }
+      .about .text { margin-top: 28px; }
+
+      /* Chiffres : deux par ligne */
+      .figures .wrap { padding: 52px 0 56px; gap: 28px; }
+      .figures .cells { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+      .figures .cell { border-top-width: 6px; padding: 18px 0 20px; }
+      .figures strong { font-size: 44px; }
+      .figures span { margin-top: 10px; font-size: 14px; line-height: 1.45; }
+
+      /* Secteurs, réalisations, méthode, parcours : marges resserrées */
+      .sectors-sec .wrap, .work .wrap, .method .wrap { padding: 64px 0; }
+      .journey .wrap { padding: 64px 0; gap: 32px; }
+      .sec-head { margin-bottom: 36px; gap: 16px; }
+      .sectors li, .sectors li:nth-child(even) { padding: 18px 0; }
+      .sectors h3 { font-size: 19px; margin-bottom: 4px; }
+      .sectors .xp { margin-top: 8px; }
+
+      .cards { gap: 20px; }
+      .card { padding: 24px 20px; }
+      .card:hover { transform: none; box-shadow: none; }
+      .card .top { gap: 12px; font-size: 12px; }
+      .card .top .pill { flex: none; white-space: nowrap; height: 26px; padding: 0 10px; font-size: 11px; }
+      .card .shot { margin: 20px 0 22px; }
+      .card h3 { font-size: 26px; }
+      .card p { font: 400 15px/1.6 "Poppins", system-ui, sans-serif; }
+      .card .stack { font-size: 12px; line-height: 1.6; }
+      .card .more-row { flex-direction: column; gap: 0; }
+      .card .more, .card .more-row .more { padding-top: 18px; }
+      .figma a { padding: 12px 0; min-height: 64px; }
+      .figma strong { font-size: 16px; }
+
+      .steps li, .steps li + li { grid-template-columns: 56px 1fr; padding: 18px 0; }
+      .journey h2 { font-size: 40px; }
+      .journey .side p { margin: 18px 0 24px; }
+      .journey .side .btn { width: 100%; justify-content: center; }
+      .journey li { padding-bottom: 20px; margin-bottom: 20px; }
+      .journey li p { font-size: 13px; line-height: 1.7; }
+
+      /* Contact : champs à 16 px pour éviter le zoom automatique sur iPhone */
+      .contact .left { padding-top: 56px; padding-bottom: 40px; }
+      .contact .left p { margin-top: 20px; font-size: 17px; }
+      .contact .coords { padding-top: 36px; gap: 14px; font-size: 16px; }
+      .contact .coords a { padding: 6px 0; }
+      .contact .coords br { display: none; }
+      .contact .right { border-top-width: 6px; padding-top: 36px; padding-bottom: 48px; }
+      form { gap: 18px; }
+      label { font-size: 15px; margin-bottom: 6px; }
+      input, select, textarea { font-size: 16px; }
+
+      /* Pied de page : place pour le bouton WhatsApp */
+      footer .mark { padding: 40px 16px 32px; font-size: 88px; }
+      footer .links { padding: 32px 16px 96px; gap: 4px 24px; }
+      footer .links a { padding: 6px 0; }
+      footer .links small { justify-content: flex-start; margin-top: 20px; }
+    }
   </style>
   <script data-goatcounter="https://dmohamedsolomani.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -606,7 +703,7 @@
         <h2 class="big">Parlons de votre projet</h2>
         <p>Offre de poste, mission ou simple question&nbsp;: je vous réponds rapidement.</p>
         <div class="coords">
-          <div>Bamako,<br />Mali</div>
+          <div>Bamako, Mali</div>
           <div>
             <a href="mailto:dmohamedsolomani@gmail.com" data-goatcounter-click="email-fr">dmohamedsolomani@gmail.com</a>
             <a href="tel:+22375992482">+223 75 99 24 82</a>

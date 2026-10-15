@@ -256,7 +256,8 @@
     .card .shot:has(img) { border-width: 1px; overflow: hidden; aspect-ratio: auto; display: block; }
     .card .shot:has(img) img { height: auto; }
     .card h3 { font-size: 30px; line-height: 1.1; font-weight: 600; margin-bottom: 14px; }
-    .card p { margin: 0; font: 400 14px/1.75 var(--mono); }
+    .card .top + h3 { margin-top: 32px; }
+    .card p { margin: 0; font: 400 15.5px/1.7 "Poppins", system-ui, sans-serif; }
     .card .stack { margin-top: 18px; font: 700 13px var(--mono); }
     .figma { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid currentColor; }
     .figma a { display: grid; grid-template-columns: 72px 1fr auto; gap: 0 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
@@ -299,7 +300,7 @@
     .journey .what { font: 700 17px var(--mono); margin-top: 6px; }
     .journey .what span { font-weight: 400; }
     .journey li a { color: var(--accent); text-underline-offset: 3px; }
-    .journey li p { margin: 8px 0 0; font: 400 14px/1.75 var(--mono); color: var(--grey); }
+    .journey li p { margin: 8px 0 0; font: 400 15px/1.7 "Poppins", system-ui, sans-serif; color: var(--grey); }
     .journey h3 { font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 24px; }
     .langs { font: 400 14px/1.8 var(--mono); }
     @media (max-width: 960px) { .journey .wrap { grid-template-columns: 1fr; gap: 40px; } }
@@ -445,7 +446,7 @@
       .journey .side p { margin: 18px 0 24px; }
       .journey .side .btn { width: 100%; justify-content: center; }
       .journey li { padding-bottom: 20px; margin-bottom: 20px; }
-      .journey li p { font-size: 13px; line-height: 1.7; }
+      .journey li p { font-size: 14.5px; line-height: 1.65; }
 
       /* Contact : champs à 16 px pour éviter le zoom automatique sur iPhone */
       .contact .left { padding-top: 56px; padding-bottom: 40px; }
@@ -639,7 +640,6 @@
           </article>
           <article class="card">
             <div class="top"><span>UI/UX design</span><span class="pill">Training</span></div>
-            <div class="shot"><img src="../assets/planifie-ton-voyage.webp" alt="PlanifieTonVoyage Figma mockup" width="1200" height="664" loading="lazy" /></div>
             <h3>Figma mockups</h3>
             <p>Three interface design projects completed during Orange Digital Center training: user journeys, screen mockups and interactive prototypes.</p>
             <ul class="figma">

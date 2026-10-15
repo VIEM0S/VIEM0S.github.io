@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Articles de Mohamed Solomani Doumbia</title>
+    <link>https://viem0s.github.io/articles/</link>
+    <description>Gestion de commerce, logiciels et terrain, depuis Bamako.</description>
+    <language>fr</language>
+    <item>
+      <title>Du cahier à Excel, puis au logiciel : quand et comment franchir le pas</title>
+      <link>https://viem0s.github.io/articles/excel-vers-logiciel-de-gestion.html</link>
+      <guid>https://viem0s.github.io/articles/excel-vers-logiciel-de-gestion.html</guid>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 GMT</pubDate>
+      <description>Cahier, notes du téléphone, Excel partagé : à quel moment un petit commerce doit passer à un vrai logiciel de gestion, et comment le faire sans tout casser.</description>
+    </item>
+    <item>
+      <title>Pourquoi votre caisse doit continuer à vendre quand Internet coupe</title>
+      <link>https://viem0s.github.io/articles/caisse-hors-ligne.html</link>
+      <guid>https://viem0s.github.io/articles/caisse-hors-ligne.html</guid>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 GMT</pubDate>
+      <description>Au Mali, la connexion coupe. Un logiciel de caisse doit continuer à vendre sans perdre de ventes ni créer de doublons. Ce qu&#x27;il faut exiger, et comment Kafora le fait.</description>
+    </item>
+    <item>
+      <title>Vendre à crédit sans mettre son commerce en danger</title>
+      <link>https://viem0s.github.io/articles/vendre-a-credit.html</link>
+      <guid>https://viem0s.github.io/articles/vendre-a-credit.html</guid>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 GMT</pubDate>
+      <description>La vente à crédit fidélise les clients mais peut vider la caisse. Les règles simples pour suivre les dettes, fixer des limites et relancer, et ce qu&#x27;un logiciel peut faire pour vous.</description>
+    </item>
+  </channel>
+</rss>

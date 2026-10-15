@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Du cahier à Excel, puis au logiciel : quand et comment franchir le pas · Mohamed Solomani Doumbia</title>
+  <meta name="description" content="Cahier, notes du téléphone, Excel partagé : à quel moment un petit commerce doit passer à un vrai logiciel de gestion, et comment le faire sans tout casser." />
+  <meta name="author" content="Mohamed Solomani Doumbia" />
+  <link rel="canonical" href="https://viem0s.github.io/articles/excel-vers-logiciel-de-gestion.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://viem0s.github.io/articles/excel-vers-logiciel-de-gestion.html" />
+  <meta property="og:site_name" content="Mohamed Solomani Doumbia" />
+  <meta property="og:title" content="Du cahier à Excel, puis au logiciel : quand et comment franchir le pas · Mohamed Solomani Doumbia" />
+  <meta property="og:description" content="Cahier, notes du téléphone, Excel partagé : à quel moment un petit commerce doit passer à un vrai logiciel de gestion, et comment le faire sans tout casser." />
+  <meta property="og:image" content="https://viem0s.github.io/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1c2a4e" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="alternate" type="application/rss+xml" title="Articles de Mohamed Solomani Doumbia" href="https://viem0s.github.io/articles/flux.xml" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Du cahier à Excel, puis au logiciel : quand et comment franchir le pas",
+  "description": "Cahier, notes du téléphone, Excel partagé : à quel moment un petit commerce doit passer à un vrai logiciel de gestion, et comment le faire sans tout casser.",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Person",
+    "name": "Mohamed Solomani Doumbia",
+    "url": "https://viem0s.github.io/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mohamed Solomani Doumbia",
+    "url": "https://viem0s.github.io/"
+  },
+  "mainEntityOfPage": "https://viem0s.github.io/articles/excel-vers-logiciel-de-gestion.html",
+  "image": "https://viem0s.github.io/assets/og-image.jpg"
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" />
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #1c2a4e; --navy-deep: #15203d; --orange: #e0673c; --accent: #c4552b;
+      --mist: #d5dae2; --ink: #111111; --grey: #5c5f66; --line: #e3e5e9; --soft: #f4f5f7;
+      --mono: "Space Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #fff; color: var(--ink); font: 400 17px/1.7 "Poppins", system-ui, sans-serif; }
+    h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.02em; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { width: min(1180px, 100% - 64px); margin-inline: auto; }
+    .narrow { width: min(740px, 100% - 64px); margin-inline: auto; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--accent); color: #fff; padding: 10px 16px; text-decoration: none; }
+    .skip:focus { top: 12px; }
+    .label { font: 400 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0 0 16px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; font: 500 15px "Poppins", sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: 1.5px solid currentColor; transition: background .15s, color .15s; }
+    .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.solid:hover { background: var(--navy); border-color: var(--navy); }
+    .btn.line { color: #fff; }
+    .btn.line:hover { background: #fff; color: var(--navy); border-color: #fff; }
+
+    .nav { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--line); }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; position: relative; }
+    .logo { font: 600 26px "Poppins", sans-serif; text-decoration: none; letter-spacing: -0.02em; }
+    .logo span { color: var(--orange); }
+    .nav nav { display: flex; gap: 32px; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+    .nav nav a { text-decoration: none; }
+    .nav nav a:hover, .nav nav a[aria-current] { color: var(--accent); }
+    .nav .progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
+
+    /* Article */
+    .art-head { padding: 72px 0 40px; }
+    .crumb { font: 400 13px var(--mono); color: var(--grey); text-decoration: none; }
+    .crumb:hover { color: var(--accent); }
+    .art-head h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.12; font-weight: 600; letter-spacing: -0.03em; margin: 24px 0 20px; }
+    .meta { font: 400 13px var(--mono); color: var(--grey); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+    .meta b { color: var(--accent); font-weight: 400; text-transform: uppercase; letter-spacing: .06em; }
+    .lead { font-size: clamp(19px, 2vw, 22px); line-height: 1.55; margin: 32px 0 0; padding-top: 32px; border-top: 1px solid var(--ink); }
+    .prose { padding: 8px 0 24px; }
+    .prose h2 { font-size: clamp(24px, 2.6vw, 30px); line-height: 1.25; font-weight: 600; margin: 52px 0 16px; }
+    .prose p { margin: 0 0 18px; }
+    .prose ul, .prose ol { margin: 0 0 22px; padding-left: 22px; }
+    .prose li { margin: 0 0 12px; padding-left: 4px; }
+    .prose li::marker { color: var(--accent); font-weight: 600; }
+    .prose strong { font-weight: 600; }
+    .prose ol.steps { list-style: none; padding: 0; counter-reset: s; }
+    .prose ol.steps li { counter-increment: s; position: relative; padding: 0 0 0 52px; margin-bottom: 18px; }
+    .prose ol.steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 1px; width: 38px; height: 30px; border: 1.5px solid var(--orange); border-radius: 999px; display: grid; place-items: center; font: 400 13px var(--mono); color: var(--ink); }
+    .prose ul.checklist { list-style: none; padding: 22px 24px; background: var(--soft); border-left: 4px solid var(--orange); }
+    .prose ul.checklist li { position: relative; padding-left: 30px; }
+    .prose ul.checklist li::before { content: "?"; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: #fff; font: 700 12px/20px var(--mono); text-align: center; }
+    .summary { background: var(--navy); color: #fff; padding: 32px; margin: 40px 0 0; }
+    .summary h2 { font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--orange); margin: 0 0 16px; }
+    .summary ul { margin: 0; padding-left: 20px; }
+    .summary li { margin-bottom: 8px; }
+    .author { display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: center; padding: 32px 0; margin-top: 40px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .author img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; filter: grayscale(1); background: var(--mist); }
+    .author b { display: block; font-weight: 600; }
+    .author span { color: var(--grey); font-size: 15px; }
+    .more { padding: 56px 0 80px; }
+    .more h2 { font-size: 24px; font-weight: 600; margin-bottom: 20px; }
+
+    /* Liste d'articles */
+    .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+    .list li { border-bottom: 1px solid var(--line); }
+    .list a { display: grid; grid-template-columns: 1fr auto; gap: 8px 32px; padding: 28px 0; text-decoration: none; }
+    .list .t { font-size: clamp(21px, 2.2vw, 26px); line-height: 1.3; font-weight: 500; transition: color .2s; }
+    .list .d { grid-column: 1; color: var(--grey); font-size: 15.5px; }
+    .list .m { grid-column: 1; font: 400 13px var(--mono); color: var(--grey); }
+    .list .m b { color: var(--accent); font-weight: 400; text-transform: uppercase; }
+    .list i { grid-row: 1 / 4; grid-column: 2; align-self: center; font-style: normal; font-size: 24px; transition: transform .2s; }
+    .list a:hover .t { color: var(--accent); }
+    .list a:hover i { transform: translateX(4px); }
+    .more .list a { padding: 20px 0; }
+    .more .list .t { font-size: 19px; }
+    .index-head { padding: 72px 0 48px; }
+    .index-head h1 { font-size: clamp(46px, 7vw, 96px); line-height: 1; font-weight: 400; letter-spacing: -0.035em; margin: 20px 0 24px; }
+    .index-head p { color: var(--grey); max-width: 34em; margin: 0; font-size: 19px; }
+    .index-body { padding-bottom: 96px; }
+
+    .cta { background: var(--navy); color: #fff; padding: 80px 0; }
+    .cta .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; }
+    .cta h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; }
+    .cta p { color: #c3c9d6; margin: 18px 0 0; max-width: 30em; }
+    .cta .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+    footer { background: var(--navy-deep); color: #c3c9d6; font: 400 13px var(--mono); }
+    footer .wrap { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px 24px; padding: 24px 0; }
+    footer a { color: #fff; }
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 30; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #0b3d20; box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: transform .2s; }
+    .wa-float svg { width: 26px; height: 26px; }
+    .wa-float:hover { transform: translateY(-3px); }
+
+    @media (max-width: 860px) { .cta .wrap { grid-template-columns: 1fr; } .cta .actions { justify-content: flex-start; } }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .wrap, .narrow { width: calc(100% - 32px); }
+      .nav .wrap { height: 64px; gap: 12px; }
+      .logo { font-size: 23px; }
+      .nav nav { gap: 16px; font-size: 12px; }
+      .art-head, .index-head { padding-top: 40px; }
+      .art-head { padding-bottom: 24px; }
+      .lead { margin-top: 24px; padding-top: 24px; }
+      .prose h2 { margin-top: 40px; }
+      .prose ol.steps li { padding-left: 46px; }
+      .prose ul.checklist { padding: 18px 16px; }
+      .summary { padding: 24px 20px; }
+      .author { grid-template-columns: 56px 1fr; gap: 16px; }
+      .author img { width: 56px; height: 56px; }
+      .list a { gap: 6px 16px; padding: 22px 0; }
+      .cta { padding: 56px 0; }
+      .cta .actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      footer .wrap { justify-content: flex-start; padding-bottom: 88px; }
+      .wa-float { right: 14px; bottom: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0s !important; } }
+  </style>
+  <script data-goatcounter="https://dmohamedsolomani.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="../" aria-label="Retour au portfolio de Mohamed Solomani Doumbia">MSD<span>.</span></a>
+      <nav aria-label="Navigation">
+        <a href="./">Articles</a>
+        <a href="../#realisations">Réalisations</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+      <div class="progress" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <article>
+      <header class="art-head narrow">
+        <a class="crumb" href="./">← Tous les articles</a>
+        <h1>Du cahier à Excel, puis au logiciel : quand et comment franchir le pas</h1>
+        <p class="meta"><b>Gestion</b><span>Par Mohamed Solomani Doumbia</span><span><time datetime="2026-10-15">15 octobre 2026</time></span><span>3 min de lecture</span></p>
+        <p class="lead">Presque tous les commerces commencent avec un cahier, puis des notes sur le téléphone, puis un fichier Excel. C&#x27;est normal, et c&#x27;est même la bonne façon de démarrer. Mais il arrive un moment où ces outils coûtent plus qu&#x27;ils ne rapportent. Voici comment je l&#x27;ai vécu avec ma propre marque, et ce que j&#x27;en retiens.</p>
+      </header>
+      <div class="prose narrow">
+<h2>Mon parcours : quatre étapes en quelques mois</h2>
+<p>Avec CultureCase, la marque de coques de téléphone de mon entreprise ABC STUDY, je suis passé par toutes les étapes classiques.</p>
+<ol class="steps">
+  <li><strong>Vérifier sur place.</strong> Au début, à chaque demande d'un client, il fallait aller voir physiquement si la coque était disponible. Avec des centaines de combinaisons modèle × design, c'était intenable.</li>
+  <li><strong>Les notes du téléphone.</strong> J'ai commencé à noter les ventes au fil de l'eau. Pratique sur le moment, mais sans vue d'ensemble ni historique fiable.</li>
+  <li><strong>Un tableur partagé.</strong> Avec Excel, mon partenaire et moi voyions enfin le même stock. Un vrai progrès.</li>
+  <li><strong>Un logiciel sur mesure.</strong> Puis les limites du tableur sont apparues, et j'ai construit CultureCase GS, l'outil qui gère aujourd'hui toute l'activité.</li>
+</ol>
+<p>Chaque étape a résolu le problème de la précédente. Aucune n'était une erreur. La vraie question est de savoir <em>quand</em> passer à la suivante.</p>
+
+<h2>Les signes qu'Excel ne suffit plus</h2>
+<p>Excel est un excellent outil. Mais il n'a pas été pensé pour faire tourner un commerce au quotidien. Si vous reconnaissez plusieurs de ces situations, il est temps d'y réfléchir :</p>
+<ul>
+  <li><strong>Deux personnes modifient le fichier en même temps</strong> et l'une écrase le travail de l'autre, ou vous ne savez plus quelle version est la bonne.</li>
+  <li><strong>Le stock du fichier ne correspond plus au stock réel</strong>, et vous devez recompter régulièrement pour vous rassurer.</li>
+  <li><strong>Vous ne pouvez pas répondre tout de suite</strong> à un client qui demande « vous l'avez en stock ? » ou « combien je vous dois ? ».</li>
+  <li><strong>Une vente oubliée, une ligne effacée, un fichier perdu</strong> : vous avez déjà perdu des données au moins une fois.</li>
+  <li><strong>Vous passez plus de temps à tenir le fichier</strong> qu'à vendre.</li>
+</ul>
+<p>Pour moi, le déclic a été la perte de données. Avant mai 2026, il m'est arrivé de perdre des ventes enregistrées. Depuis que CultureCase GS est en service, en mai 2026, cela ne s'est plus produit, notamment grâce aux sauvegardes automatiques.</p>
+
+<h2>Ce qu'un logiciel apporte vraiment</h2>
+<p>Un logiciel de gestion ne fait pas de miracle. Il apporte surtout trois choses qu'un tableur fait mal :</p>
+<ul>
+  <li><strong>Une seule source de vérité.</strong> Chaque vente met à jour le stock automatiquement. Tout le monde voit les mêmes chiffres, en temps réel.</li>
+  <li><strong>Des règles appliquées à chaque fois.</strong> Impossible de vendre un article en rupture, d'oublier de noter une livraison ou de dépasser une limite de crédit sans le voir.</li>
+  <li><strong>Un historique fiable.</strong> Qui a acheté quoi, quand, à quel prix. Aujourd'hui, CultureCase GS conserve l'historique de 207 ventes et de 184 clients, consultable en quelques secondes.</li>
+</ul>
+
+<h2>Comment faire la transition sans tout casser</h2>
+<p>Changer d'outil fait peur, et c'est compréhensible : le commerce ne peut pas s'arrêter pendant ce temps. Voici la méthode que je recommande, et que j'applique avec mes clients :</p>
+<ol class="steps">
+  <li><strong>Commencez par ce qui fait le plus mal.</strong> Souvent le stock ou les ventes. Inutile de tout informatiser d'un coup.</li>
+  <li><strong>Reprenez vos données existantes.</strong> Votre fichier Excel n'est pas perdu : il sert à remplir le nouvel outil (produits, clients, soldes).</li>
+  <li><strong>Faites tourner les deux en parallèle</strong> quelques jours, pour vérifier que les chiffres concordent.</li>
+  <li><strong>Formez les personnes qui vont l'utiliser.</strong> Un outil que l'équipe n'aime pas ne sera pas utilisé.</li>
+  <li><strong>Gardez une porte de sortie.</strong> Un bon logiciel permet d'exporter vos données (par exemple en fichier CSV, lisible dans Excel) et les sauvegarde automatiquement.</li>
+</ol>
+
+<h2>Et si vous n'êtes pas encore prêt ?</h2>
+<p>Si votre activité tient dans un cahier et que vous ne perdez rien, gardez votre cahier. Le bon outil est celui qui correspond à votre taille aujourd'hui. Mais si vous vous êtes reconnu dans les signes plus haut, n'attendez pas de perdre des données pour agir : c'est la leçon que j'ai apprise à mes dépens.</p>
+        <aside class="summary" aria-label="En résumé">
+          <h2>En résumé</h2>
+          <ul><li>Le cahier et Excel sont de bons outils pour démarrer.</li><li>Le bon moment pour changer : quand vous perdez des données, du temps ou la confiance dans vos chiffres.</li><li>Changez progressivement, en reprenant vos données et en gardant une sauvegarde.</li></ul>
+        </aside>
+        <div class="author">
+          <img src="../assets/photo.webp" alt="" width="72" height="72" loading="lazy" />
+          <div><b>Mohamed Solomani Doumbia</b><span>Développeur en informatique de gestion à Bamako, créateur de Kafora et de CultureCase GS. <a href="../">Voir mon portfolio</a>.</span></div>
+        </div>
+      </div>
+    </article>
+    <section class="more narrow" aria-label="À lire aussi">
+      <h2>À lire aussi</h2>
+      <ul class="list">
+        <li><a href="caisse-hors-ligne.html"><span class="t">Pourquoi votre caisse doit continuer à vendre quand Internet coupe</span><span class="d">Au Mali, la connexion coupe. Un logiciel de caisse doit continuer à vendre sans perdre de ventes ni créer de doublons. Ce qu&#x27;il faut exiger, et comment Kafora le fait.</span><span class="m"><b>Technique</b> · 3 min de lecture</span><i aria-hidden="true">→</i></a></li>
+        <li><a href="vendre-a-credit.html"><span class="t">Vendre à crédit sans mettre son commerce en danger</span><span class="d">La vente à crédit fidélise les clients mais peut vider la caisse. Les règles simples pour suivre les dettes, fixer des limites et relancer, et ce qu&#x27;un logiciel peut faire pour vous.</span><span class="m"><b>Gestion</b> · 3 min de lecture</span><i aria-hidden="true">→</i></a></li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div>
+          <p class="label" style="color: var(--orange);">Un projet&nbsp;?</p>
+          <h2>Parlons de votre activité</h2>
+          <p>Logiciel de gestion, caisse, stock, crédit client&nbsp;: je construis des outils adaptés au terrain. Écrivez-moi, je vous réponds rapidement.</p>
+        </div>
+        <div class="actions">
+          <a class="btn solid" href="../#contact">Me contacter</a>
+          <a class="btn line" href="../projets/kafora.html">Découvrir Kafora →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/22375992482?text=Bonjour%20Mohamed%2C%20je%20vous%20contacte%20apr%C3%A8s%20avoir%20lu%20votre%20article." target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" data-goatcounter-click="whatsapp-articles"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg></a>
+
+  <footer>
+    <div class="wrap">
+      <a href="flux.xml">Flux RSS</a>
+      <a href="../">Retour au portfolio</a>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var bar = document.querySelector(".nav .progress");
+      function onScroll() { var h = document.documentElement.scrollHeight - innerHeight; bar.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")"; }
+      addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    })();
+  </script>
+</body>
+</html>

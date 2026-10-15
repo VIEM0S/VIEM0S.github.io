@@ -274,6 +274,24 @@
     .card .more:hover { text-decoration: underline; }
     @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .card { min-height: 0; } }
 
+    /* ── Articles ────────────────────────────────────── */
+    .posts .wrap { padding: 104px 0 0; }
+    .posts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--ink); }
+    .posts li + li { border-left: 1px solid var(--line); }
+    .posts a { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 28px 28px 30px 0; text-decoration: none; }
+    .posts li + li a { padding-left: 28px; }
+    .posts small { font: 400 12px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+    .posts strong { font-size: 21px; line-height: 1.35; font-weight: 500; transition: color .2s; }
+    .posts span { margin-top: auto; font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .posts a:hover strong { color: var(--accent); }
+    .posts .all { display: inline-block; margin-top: 28px; font: 700 13px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    @media (max-width: 860px) {
+      .posts ul { grid-template-columns: 1fr; }
+      .posts li + li { border-left: 0; border-top: 1px solid var(--line); }
+      .posts a, .posts li + li a { padding: 22px 0; }
+    }
+    @media (max-width: 640px) { .posts .wrap { padding-top: 64px; } .posts strong { font-size: 19px; } }
+
     /* ── Méthode ─────────────────────────────────────── */
     .method .wrap { padding: 104px 0; }
     .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
@@ -653,6 +671,22 @@
       </div>
     </section>
 
+    <!-- Articles -->
+    <section class="posts" id="articles">
+      <div class="wrap">
+        <div class="reveal sec-head">
+          <h2 class="big">Articles</h2>
+          <p>Ce que j'apprends en construisant des outils de gestion pour les commerces d'ici&nbsp;: des conseils concrets, tirés de mes projets.</p>
+        </div>
+        <ul class="reveal">
+          <li><a href="articles/excel-vers-logiciel-de-gestion.html"><small>Gestion · 3 min</small><strong>Du cahier à Excel, puis au logiciel : quand et comment franchir le pas</strong><span>Lire l'article →</span></a></li>
+          <li><a href="articles/caisse-hors-ligne.html"><small>Technique · 3 min</small><strong>Pourquoi votre caisse doit continuer à vendre quand Internet coupe</strong><span>Lire l'article →</span></a></li>
+          <li><a href="articles/vendre-a-credit.html"><small>Gestion · 3 min</small><strong>Vendre à crédit sans mettre son commerce en danger</strong><span>Lire l'article →</span></a></li>
+        </ul>
+        <a class="all" href="articles/">Tous les articles →</a>
+      </div>
+    </section>
+
     <!-- Méthode -->
     <section class="method" id="methode">
       <div class="wrap">
@@ -758,6 +792,7 @@
       <a href="#methode">Méthode</a>
       <a href="projets/kafora.html">Étude Kafora</a>
       <a href="abc-study/">ABC STUDY</a>
+      <a href="articles/">Articles</a>
       <small><a href="#">Retour en haut ↑</a></small>
     </div>
   </footer>

@@ -275,6 +275,34 @@
     .card .more:hover { text-decoration: underline; }
     @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } .card { min-height: 0; } }
 
+    /* ── Mon entreprise (ABC STUDY) ──────────────────── */
+    .company { background: #12233d; color: #fff; position: relative; overflow: hidden; }
+    .company::after { content: ""; position: absolute; right: -140px; bottom: -160px; width: 460px; height: 460px; border-radius: 50%; border: 64px solid rgba(232,114,74,.12); pointer-events: none; }
+    .company .wrap { position: relative; z-index: 1; padding: 96px 0; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+    .company .brand-row { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+    .company .brand-row img { width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
+    .company .brand-row small { display: block; font: 400 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: #e8724a; }
+    .company .brand-row b { display: block; font-size: 30px; font-weight: 600; letter-spacing: -0.01em; }
+    .company h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.12; font-weight: 500; }
+    .company p { color: #c9d1df; margin: 20px 0 0; max-width: 34em; }
+    .company .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .company .btn.line { color: #fff; }
+    .company .btn.line:hover { background: #fff; color: #12233d; border-color: #fff; }
+    .company .btn.solid { background: #c9562f; border-color: #c9562f; }
+    .company .btn.solid:hover { background: #fff; border-color: #fff; color: #12233d; }
+    .company .domains { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .company .domains li { border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 9px 16px; font-size: 15px; }
+    .company .legal { margin-top: 26px; font: 400 13px var(--mono); color: #aab4c6; }
+    @media (max-width: 960px) { .company .wrap { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 640px) {
+      .company .wrap { padding: 60px 0; gap: 32px; }
+      .company::after { width: 280px; height: 280px; border-width: 40px; right: -110px; bottom: -110px; }
+      .company .actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .company .actions .btn { justify-content: center; }
+      .company .domains li { font-size: 14px; padding: 7px 13px; }
+    }
+    @media (min-width: 861px) and (max-width: 1100px) { .nav nav { gap: 22px; font-size: 14px; } .lang { margin-left: 18px; } }
+
     /* ── Méthode ─────────────────────────────────────── */
     .method .wrap { padding: 104px 0; }
     .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ink); }
@@ -479,6 +507,7 @@
         <a href="#apropos">About</a>
         <a href="#services">Services</a>
         <a href="#realisations">Work</a>
+        <a href="#entreprise">ABC STUDY</a>
         <a href="#parcours">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -493,9 +522,10 @@
     <a href="#services">Services <small>02</small></a>
     <a href="#secteurs">Industries <small>03</small></a>
     <a href="#realisations">Work <small>04</small></a>
-    <a href="#methode">Process <small>05</small></a>
-    <a href="#parcours">Experience <small>06</small></a>
-    <a href="#contact">Contact <small>07</small></a>
+    <a href="#entreprise">ABC STUDY <small>05</small></a>
+    <a href="#methode">Process <small>06</small></a>
+    <a href="#parcours">Experience <small>07</small></a>
+    <a href="#contact">Contact <small>08</small></a>
     <a class="btn solid" href="../assets/CV_Mohamed_Solomani_Doumbia_EN.pdf" download data-goatcounter-click="cv-download-en">Download my CV</a>
     <a class="btn wa-btn" href="https://wa.me/22375992482?text=Hello%20Mohamed%2C%20I%27m%20contacting%20you%20from%20your%20portfolio." target="_blank" rel="noopener" data-goatcounter-click="whatsapp-en"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg> Message me on WhatsApp</a>
   </nav>
@@ -637,6 +667,25 @@
               <li><a href="https://www.figma.com/proto/pM8OPBiKQVEV72gBosYkgj/Recette-Cuisine?node-id=80-198&amp;page-id=4%3A5&amp;starting-point-node-id=4%3A6&amp;scaling=min-zoom&amp;content-scaling=fixed" target="_blank" rel="noopener" data-goatcounter-click="figma"><img src="../assets/recette-cuisine.webp" alt="" width="72" height="45" loading="lazy" /><strong>Recette Cuisine</strong><span>App · prototype, pair project</span><i>↗</i></a></li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mon entreprise -->
+    <section class="company" id="entreprise">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="brand-row"><img src="../abc-study/logo.svg" alt="Logo ABC STUDY" width="64" height="64" loading="lazy" /><div><small>My company</small><b>ABC STUDY</b></div></div>
+          <h2>Supplies and services for businesses, institutions and individuals.</h2>
+          <p>I founded and run ABC STUDY, a registered sole proprietorship in Bamako. It keeps me in direct contact with the realities of trade: sourcing, customers, invoices, credit. That experience feeds into the software I build.</p>
+          <div class="actions">
+            <a class="btn solid" href="../abc-study/" hreflang="fr" data-goatcounter-click="vers-abc-study">Visit the company website (French) →</a>
+            <a class="btn line" href="https://wa.me/22375992482?text=Hello%20ABC%20STUDY%2C%20I%20would%20like%20a%20quote%20for%3A%20" target="_blank" rel="noopener" data-goatcounter-click="abc-devis-portfolio">Request a quote</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <ul class="domains" aria-label="ABC STUDY business areas"><li>IT &amp; office equipment</li><li>Construction &amp; fit-out</li><li>Agriculture</li><li>Automotive &amp; mechanics</li><li>General trading</li><li>Consumer electronics</li><li>Solar energy</li><li>Printing &amp; visual communication</li></ul>
+          <p class="legal">Sole proprietorship · RCCM MA.SIK.2026.A.0048 · NIF 031010732W</p>
         </div>
       </div>
     </section>

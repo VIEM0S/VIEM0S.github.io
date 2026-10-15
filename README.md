@@ -6,7 +6,7 @@ Site personnel statique (HTML/CSS/JS, sans dépendance), publié avec GitHub Pag
 - `404.html` : page d'erreur
 - `projets/kafora.html`, `projets/culturecase.html` : études de cas détaillées
 - `en/` : version anglaise (`en/index.html`, `en/projects/kafora.html`) — à mettre à jour en même temps que la version française
-- `abc-study/` : vitrine de l'entreprise ABC STUDY (page autonome, logo `logo.svg`, image de partage `og-abc-study.jpg`). Le numéro de compte bancaire n'y figure volontairement pas.
+- `abc-study/` : vitrine de l'entreprise ABC STUDY (page autonome, logo `logo.svg`, image de partage `og-abc-study.jpg`). Le numéro de compte bancaire n'y figure volontairement pas. Le dossier de présentation public (`ABC_STUDY_Dossier_de_presentation.pdf`, sans coordonnées bancaires) se télécharge depuis la section Informations légales.
 - `articles/` : articles (FR), avec page de liste et flux RSS `flux.xml`. Pour ajouter un article : copier un article existant, changer le titre, la description, la date et le texte, puis l'ajouter à `articles/index.html`, à `flux.xml`, au bloc Articles de `index.html` et à `sitemap.xml`.
 - `assets/` : photo (JPEG + WebP), icônes, image d'aperçu pour les partages (`og-image.jpg`) et CV en PDF
 - `robots.txt`, `sitemap.xml` : référencement

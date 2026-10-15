@@ -23,4 +23,4 @@ Pour le modifier : éditer `cv/cv.html`, l'ouvrir dans Chrome, Imprimer → Enre
 ## Statistiques de visites
 
 GoatCounter (sans cookies) : tableau de bord sur https://dmohamedsolomani.goatcounter.com.
-Événements suivis : téléchargements du CV (`cv-download-fr` / `cv-download-en`), clics WhatsApp, e-mail, GitHub, Instagram, Kafora, Figma, et formulaire envoyé (`formulaire-envoye-fr` / `-en`). Sur la vitrine ABC STUDY : `abc-whatsapp`, `abc-whatsapp-hero`, `abc-whatsapp-flottant`, `abc-telephone`, `abc-email`, `abc-vers-portfolio`.
+Événements suivis : téléchargements du CV (`cv-download-fr` / `cv-download-en`), clics WhatsApp, e-mail, GitHub, Instagram, Kafora, Figma, et formulaire envoyé (`formulaire-envoye-fr` / `-en`). Sur la vitrine ABC STUDY : `abc-whatsapp`, `abc-whatsapp-hero`, `abc-whatsapp-flottant`, `abc-telephone`, `abc-email`.
